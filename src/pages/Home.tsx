@@ -13,7 +13,6 @@ export default function Home() {
           <h2 className="text-xl font-semibold mb-1">Proofmint Demo →</h2>
           <p className="text-gray-600">Live walkthrough, screenshots, Etherscan links.</p>
         </Link>
-
         <Link to="projects" className="rounded-2xl border p-6 hover:shadow-sm transition">
           <h2 className="text-xl font-semibold mb-1">Projects →</h2>
           <p className="text-gray-600">Solidity + Hardhat, Solana/Anchor, and UI templates.</p>
