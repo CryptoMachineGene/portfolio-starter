@@ -1,4 +1,4 @@
-
+// src/main.tsx
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { createBrowserRouter, RouterProvider } from 'react-router-dom'
@@ -10,19 +10,22 @@ import Projects from './pages/Projects'
 import About from './pages/About'
 import NotFound from './pages/NotFound'
 
-const router = createBrowserRouter([
-  {
-    path: '/',
-    element: <App />,
-    children: [
-      { index: true, element: <Home /> },
-      { path: 'proofmint', element: <Proofmint /> },
-      { path: 'projects', element: <Projects /> },
-      { path: 'about', element: <About /> },
-      { path: '*', element: <NotFound /> },
-    ]
-  }
-])
+const router = createBrowserRouter(
+  [
+    {
+      path: '/',
+      element: <App />,
+      children: [
+        { index: true, element: <Home /> },
+        { path: 'proofmint', element: <Proofmint /> },
+        { path: 'projects', element: <Projects /> },
+        { path: 'about', element: <About /> },
+        { path: '*', element: <NotFound /> },
+      ],
+    },
+  ],
+  { basename: '/portfolio-starter' } // <-- important for GitHub Pages
+)
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
