@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 export default function Home() {
   return (
     <section className="space-y-6">
-      <h1 className="text-3xl font-bold">Hello — I’m Eugene (CryptoMachine Gene)</h1>
+      <h1 className="text-3xl font-bold">Hello — I’m Eugene (LIVE HASH ROUTER)</h1>
       <p className="text-gray-700">
         Blockchain developer and co-founder of New World Cryptos®. This site hosts quick demos and links for recruiters —
         starting with the Proofmint crowdsale + NFT receipt dApp.
