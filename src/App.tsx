@@ -1,16 +1,29 @@
-
 import { Outlet, NavLink } from 'react-router-dom'
 
 const Nav = () => (
   <header className="border-b bg-white">
     <nav className="container-nwc flex items-center justify-between py-4">
-      <NavLink to="/" className="text-xl font-bold">
+      {/* Brand — only one, and use `end` so it's active only on the home route */}
+      <NavLink to="/" end className="text-xl font-bold">
         New World Cryptos® — Portfolio
       </NavLink>
+
       <ul className="flex items-center gap-6 text-sm">
-        <li><NavLink to="proofmint" className={({isActive}) => isActive ? 'font-semibold' : ''}>Proofmint</NavLink></li>
-        <li><NavLink to="projects" className={({isActive}) => isActive ? 'font-semibold' : ''}>Projects</NavLink></li>
-        <li><NavLink to="about" className={({isActive}) => isActive ? 'font-semibold' : ''}>About</NavLink></li>
+        <li>
+          <NavLink to="proofmint" className={({ isActive }) => (isActive ? 'font-semibold' : '')}>
+            Proofmint
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to="projects" className={({ isActive }) => (isActive ? 'font-semibold' : '')}>
+            Projects
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to="about" className={({ isActive }) => (isActive ? 'font-semibold' : '')}>
+            About
+          </NavLink>
+        </li>
       </ul>
     </nav>
   </header>
