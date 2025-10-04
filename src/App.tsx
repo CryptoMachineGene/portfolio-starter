@@ -8,9 +8,9 @@ const Nav = () => (
         New World Cryptos® — Portfolio
       </NavLink>
       <ul className="flex items-center gap-6 text-sm">
-        <li><NavLink to="/proofmint" className={({isActive}) => isActive ? 'font-semibold' : ''}>Proofmint</NavLink></li>
-        <li><NavLink to="/projects" className={({isActive}) => isActive ? 'font-semibold' : ''}>Projects</NavLink></li>
-        <li><NavLink to="/about" className={({isActive}) => isActive ? 'font-semibold' : ''}>About</NavLink></li>
+        <li><NavLink to="proofmint" className={({isActive}) => isActive ? 'font-semibold' : ''}>Proofmint</NavLink></li>
+        <li><NavLink to="projects" className={({isActive}) => isActive ? 'font-semibold' : ''}>Projects</NavLink></li>
+        <li><NavLink to="about" className={({isActive}) => isActive ? 'font-semibold' : ''}>About</NavLink></li>
       </ul>
     </nav>
   </header>
