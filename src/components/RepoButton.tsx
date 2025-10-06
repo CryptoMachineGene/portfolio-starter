@@ -10,8 +10,7 @@ export default function RepoButton({
       className="inline-flex items-center gap-2 px-4 py-2 rounded-xl border-2 border-black bg-yellow-200 text-black"
       href={href}
       target="_blank"
-      rel="noreferrer"
-      className="inline-flex items-center gap-2 px-4 py-2 rounded-xl border shadow-sm hover:shadow-md transition text-sm font-medium bg-white hover:bg-gray-50"
+      rel="noreferrer"      
     >
       {/* GitHub icon (SVG) */}
       <svg
