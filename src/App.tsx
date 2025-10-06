@@ -1,7 +1,7 @@
 import { Outlet, NavLink } from 'react-router-dom'
 
 const Nav = () => (
-  <header className="border-b bg-white">
+  <header className="border-b bg-white shadow-sm">
     <nav className="container-nwc flex items-center justify-between py-4">
       {/* Brand — only one, and use `end` so it's active only on the home route */}
       <NavLink to="/" end className="text-xl font-bold">
@@ -30,7 +30,7 @@ const Nav = () => (
 )
 
 const Footer = () => (
-  <footer className="mt-16 border-t bg-white">
+  <footer className="mt-16 border-t bg-white text-gray-600 dark:bg-gray-900 dark:text-gray-400">
     <div className="container-nwc py-6 text-xs text-gray-600 flex flex-col sm:flex-row items-center justify-between gap-2">
       <p>© {new Date().getFullYear()} New World Cryptos® · Built with React + Tailwind</p>
       <p className="opacity-80">Signal over noise. Sovereignty over servitude.</p>
