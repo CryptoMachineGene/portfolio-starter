@@ -1,29 +1,18 @@
-import { Outlet, NavLink } from 'react-router-dom'
+// src/App.tsx
+import { Outlet, NavLink, useLocation } from 'react-router-dom'
 
 const Nav = () => (
   <header className="border-b bg-white shadow-sm">
     <nav className="container-nwc flex items-center justify-between py-4">
-      {/* Brand — only one, and use `end` so it's active only on the home route */}
       <NavLink to="/" end className="text-xl font-bold">
         New World Cryptos® — Portfolio
       </NavLink>
 
       <ul className="flex items-center gap-6 text-sm">
-        <li>
-          <NavLink to="proofmint" className={({ isActive }) => (isActive ? 'font-semibold' : '')}>
-            Proofmint
-          </NavLink>
-        </li>
-        <li>
-          <NavLink to="projects" className={({ isActive }) => (isActive ? 'font-semibold' : '')}>
-            Projects
-          </NavLink>
-        </li>
-        <li>
-          <NavLink to="about" className={({ isActive }) => (isActive ? 'font-semibold' : '')}>
-            About
-          </NavLink>
-        </li>
+        <li><NavLink to="resume"   className={({ isActive }) => (isActive ? 'font-semibold' : '')}>Resume</NavLink></li>
+        <li><NavLink to="proofmint" className={({ isActive }) => (isActive ? 'font-semibold' : '')}>Proofmint</NavLink></li>
+        <li><NavLink to="projects"  className={({ isActive }) => (isActive ? 'font-semibold' : '')}>Projects</NavLink></li>
+        <li><NavLink to="about"     className={({ isActive }) => (isActive ? 'font-semibold' : '')}>About</NavLink></li>
       </ul>
     </nav>
   </header>
@@ -39,10 +28,14 @@ const Footer = () => (
 )
 
 export default function App() {
+  const { pathname } = useLocation()
+  const isResume = pathname === '/resume' || pathname === '/' // if Resume is homepage
+
   return (
     <div className="min-h-screen flex flex-col">
       <Nav />
-      <main className="container-nwc flex-1 py-10">
+      {/* Drop container on resume so hero can go full-bleed */}
+      <main className={`${isResume ? '' : 'container-nwc'} flex-1 py-10`}>
         <Outlet />
       </main>
       <Footer />
