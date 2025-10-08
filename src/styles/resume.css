@@ -20,12 +20,12 @@
   overflow-x: hidden;
 }
 
-/* Full-bleed hero that escapes any parent width constraints */
+//* Full-bleed HERO */
 .resume .header {
   min-height: 100vh;
   width: 100vw;
   margin-left: 50%;
-  transform: translateX(-50%);       /* center the full-width block */
+  transform: translateX(-50%);
   padding-block: clamp(32px, 6vw, 96px);
   padding-inline: clamp(32px, 6vw, 96px);
   background-image: url('/img/Background.png');
@@ -34,12 +34,27 @@
   color: var(--black);
 }
 
-/* Keep inner content nicely centered and capped */
-.resume .hero-inner {
+/* Full-bleed SECTIONS */
+.resume .section {
+  width: 100vw;
+  margin-left: 50%;
+  transform: translateX(-50%);
+  padding-block: clamp(48px, 6vw, 110px);
+  padding-inline: clamp(32px, 6vw, 96px);
+  min-height: unset; /* drop fixed 850px so content dictates height */
+}
+
+/* Shared inner container for hero + sections */
+.resume .hero-inner,
+.resume .section-inner {
   width: min(1100px, 100%);
   margin: 0 auto;
 }
 
+/* Darker base for content sections (Vector pattern sits on top where applied) */
+.resume .section:not(.about):not(.skills) {
+  background-color: #060003;
+}
 
 /* TYPOGRAPHY */
 .resume h1 { font-weight: 400; font-size: var(--font-96); line-height: 116px; }
