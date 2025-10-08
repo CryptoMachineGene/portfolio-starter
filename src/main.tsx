@@ -1,4 +1,3 @@
-// src/main.tsx
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { createHashRouter, RouterProvider } from 'react-router-dom'
@@ -7,18 +6,20 @@ import './index.css'
 import App from './App'
 import Home from './pages/Home'
 import Proofmint from './pages/Proofmint'
-import SolanaHello from './pages/SolanaHello';
-import Sakura from './pages/Sakura';
+import SolanaHello from './pages/SolanaHello'
+import Sakura from './pages/Sakura'
 import Projects from './pages/Projects'
 import About from './pages/About'
 import NotFound from './pages/NotFound'
+import Resume from './pages/Resume'   
 
 const router = createHashRouter([
   {
     path: '/',
     element: <App />,
     children: [
-      { index: true, element: <Home /> },
+      { index: true, element: <Resume /> }, // default/home
+      { path: 'resume', element: <Resume /> },
       { path: 'proofmint', element: <Proofmint /> },
       { path: 'solana-hello', element: <SolanaHello /> },
       { path: 'sakura', element: <Sakura /> },
