@@ -1,0 +1,13 @@
+<svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Hardhat">
+  <defs>
+    <linearGradient id="hh" x1="0" x2="1">
+      <stop offset="0" stop-color="#f7d046"/>
+      <stop offset="1" stop-color="#f2c130"/>
+    </linearGradient>
+  </defs>
+  <rect width="128" height="128" rx="16" fill="none"/>
+  <path d="M20 78c0-28 18-50 44-50s44 22 44 50v6c0 8-6 14-14 14H34c-8 0-14-6-14-14v-6z" fill="url(#hh)"/>
+  <path d="M34 57c14 7 46 7 60 0v8c-14 7-46 7-60 0v-8z" fill="#1e1b4b" opacity=".25"/>
+  <path d="M30 86h68v6c0 5-4 9-9 9H39c-5 0-9-4-9-9v-6z" fill="#313244" opacity=".35"/>
+  <path d="M26 78h76v4H26z" fill="#0f172a" opacity=".5"/>
+</svg>

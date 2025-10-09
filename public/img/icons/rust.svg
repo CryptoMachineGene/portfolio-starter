@@ -1,0 +1,6 @@
+<svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Rust">
+  <rect width="128" height="128" rx="16" fill="#1f2937"/>
+  <circle cx="64" cy="64" r="40" fill="none" stroke="#dea584" stroke-width="8" />
+  <path fill="#dea584" d="M40 80h48v-8H72l6-8-6-8h16v-8H40v8h16l-6 8 6 8H40z"/>
+  <circle cx="32" cy="64" r="4" fill="#dea584"/><circle cx="96" cy="64" r="4" fill="#dea584"/>
+</svg>

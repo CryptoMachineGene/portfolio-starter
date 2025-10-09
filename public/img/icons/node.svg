@@ -1,0 +1,5 @@
+<svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Node.js">
+  <rect width="128" height="128" rx="16" fill="#1f2937"/>
+  <path fill="#68a063" d="M64 22l40 23v38L64 106 24 83V45L64 22z"/>
+  <path fill="#fff" d="M64 44l18 10v20L64 84 46 74V54L64 44z" opacity=".9"/>
+</svg>
