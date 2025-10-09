@@ -11,15 +11,16 @@ import Sakura from './pages/Sakura'
 import Projects from './pages/Projects'
 import About from './pages/About'
 import NotFound from './pages/NotFound'
-import Resume from './pages/Resume'   
+import Resume from './pages/Resume'
 
 const router = createHashRouter([
   {
     path: '/',
     element: <App />,
     children: [
-      { index: true, element: <Resume /> }, // default/home
-      { path: 'resume', element: <Resume /> },
+      { index: true, element: <Resume /> },     // <— Resume as default landing page
+      { path: 'resume', element: <Resume /> },  // <— also available at /#/resume
+      { path: 'home', element: <Home /> },      
       { path: 'proofmint', element: <Proofmint /> },
       { path: 'solana-hello', element: <SolanaHello /> },
       { path: 'sakura', element: <Sakura /> },
