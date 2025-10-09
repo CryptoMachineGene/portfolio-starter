@@ -5,10 +5,10 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "tsc -b && vite build",
     "preview": "vite preview",
+    "build": "tsc -b && vite build",
     "predeploy": "npm run build",
-    "deploy": "npx gh-pages-clean && gh-pages -d dist -b gh-pages"
+    "deploy": "DEBUG=gh-pages gh-pages -d dist -b gh-pages -f --no-history"
   },
   "dependencies": {
     "react": "^18.3.1",

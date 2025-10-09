@@ -1,43 +1,24 @@
-import { Outlet, NavLink, useLocation } from 'react-router-dom'
-
-const Nav = () => (
-  <header className="border-b bg-white shadow-sm">
-    <nav className="container-nwc flex items-center justify-between py-4">
-      <NavLink to="/" end className="text-xl font-bold">
-        New World Cryptos® — Portfolio
-      </NavLink>
-
-      <ul className="flex items-center gap-6 text-sm">
-        <li><NavLink to="resume"    className={({ isActive }) => (isActive ? 'font-semibold' : '')}>Resume</NavLink></li>
-        <li><NavLink to="proofmint" className={({ isActive }) => (isActive ? 'font-semibold' : '')}>Proofmint</NavLink></li>
-        <li><NavLink to="projects"  className={({ isActive }) => (isActive ? 'font-semibold' : '')}>Projects</NavLink></li>
-        <li><NavLink to="about"     className={({ isActive }) => (isActive ? 'font-semibold' : '')}>About</NavLink></li>
-      </ul>
-    </nav>
-  </header>
-)
-
-const Footer = () => (
-  <footer className="mt-16 border-t bg-white text-gray-600 dark:bg-gray-900 dark:text-gray-400">
-    <div className="container-nwc py-6 text-xs text-gray-600 flex flex-col sm:flex-row items-center justify-between gap-2">
-      <p>© {new Date().getFullYear()} New World Cryptos® · Built with React + Tailwind</p>
-      <p className="opacity-80">Signal over noise. Sovereignty over servitude.</p>
-    </div>
-  </footer>
-)
+import { Outlet, useLocation } from 'react-router-dom'
+import SiteFooter from './components/SiteFooter'
 
 export default function App() {
   const { pathname } = useLocation()
-  const isResume = pathname === '/resume' || pathname === '/' // if Resume is homepage
+  const isResume = pathname === '/resume'
 
-  return (
+  // inside App()
+return isResume ? (
+  <div className="min-h-screen flex flex-col bg-[#0b0c10]">
+    <main className="flex-1 bg-[#0b0c10]">
+      <Outlet />
+    </main>
+    <SiteFooter compact bgClass="bg-[#0b0c10]" borderClass="border-t border-gray-800" />
+  </div>
+) : (
     <div className="min-h-screen flex flex-col">
-      <Nav />
-      {/* No container or extra padding on Resume */}
-      <main className={`${isResume ? '' : 'container-nwc py-10'} flex-1`}>
+      <main className="container-nwc py-10 flex-1">
         <Outlet />
       </main>
-      <Footer />
+      <SiteFooter />
     </div>
   )
 }
