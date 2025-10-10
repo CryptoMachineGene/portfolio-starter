@@ -20,7 +20,7 @@
   overflow-x: hidden;
 }
 
-//* Full-bleed HERO */
+/* Full-bleed HERO */
 .resume .header {
   min-height: 100vh;
   width: 100vw;
@@ -163,11 +163,51 @@
 .resume .projects .card img { width: 100%; max-width: 325px; height: auto; margin: 0 auto 16px; }
 .resume .projects .card .card-title { font-size: 24px; margin-bottom: 8px; }
 .resume .projects .card .card-description { margin-bottom: 60px; }
-.resume .projects .card .card-buttons { display:flex; justify-content:space-between; }
-.resume .projects .card .card-buttons a { width:150px; height:60px; display:flex; justify-content:center; align-items:center; color:var(--white); transition:250ms; }
-.resume .projects .card .card-buttons .card-button--site { background-color: var(--gray); }
-.resume .projects .card .card-buttons .card-button--code { border: 1px solid var(--gray); }
-.resume .projects .card .card-buttons a:hover { background-color: var(--white); color: var(--black); }
+/* PROJECT BUTTONS — dynamic centering + original colors */
+.resume .projects .card .card-buttons {
+  display: flex;
+  justify-content: space-between;      /* default for two buttons */
+  gap: 0.75rem;                        /* adds spacing between */
+}
+
+/* Center buttons if there's only one child */
+.resume .projects .card .card-buttons:has(a:nth-child(1):last-child) {
+  justify-content: center;
+}
+
+/* Button base styles */
+.resume .projects .card .card-buttons a {
+  width: 150px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--white);
+  border-radius: 12px;
+  transition: 250ms;
+}
+
+/* Site button (dark background) */
+.resume .projects .card .card-buttons .card-button--site {
+  background-color: var(--gray);
+}
+
+/* Code button (outlined) */
+.resume .projects .card .card-buttons .card-button--code {
+  border: 1px solid var(--gray);
+}
+
+/* Hover effects */
+.resume .projects .card .card-buttons a:hover {
+  background-color: var(--white);
+  color: var(--black);
+}
+
+/* Fallback: center when we add .single */
+.resume .projects .card .card-buttons.single {
+  justify-content: center;
+}
+
 
 /* EXPERIENCE */
 .resume .experience-description { max-width: 900px; margin-bottom: 125px; font-size: var(--font-32); position: relative; }

@@ -1,9 +1,16 @@
 import { Link } from "react-router-dom";
 import "../styles/resume.css";
+import { PROJECTS } from "../data/projects";
 
 export default function Resume() {
   // Use Vite base for public assets so it works on GitHub Pages
   const base = import.meta.env.BASE_URL; // e.g., "/portfolio-starter/"
+  const get = (key: "proofmint" | "solana-hello" | "sakura") =>
+    PROJECTS.find(p => p.key === key)!;
+
+  const proofmint = get("proofmint");
+  const sakura = get("sakura");
+  const solana = get("solana-hello");
 
   return (
     <>
@@ -61,49 +68,91 @@ export default function Resume() {
 
           {/* PROJECTS */}
           <section className="section projects">
-            <div className="section-inner">
-              <div className="flex-between">
-                <h2>Selected Projects</h2>
-                <a href="https://github.com/CryptoMachineGene" className="projects-link flex-between">
-                  See all works <img src={`${base}img/ArrowUpRight.svg`} alt="Arrow" style={{ marginLeft: 8, opacity: 0.7 }} />
-                </a>
+            <div className="cards flex-center">
+              {/* Proofmint */}
+              <div className="card">
+                <img src={`${base}img/projects/project_1.png`} alt="Proofmint dApp" />
+                <h3 className="card-title">Proofmint</h3>
+                <p className="card-description">
+                  Full-stack token crowdsale + NFT receipt dApp (Hardhat, Solidity, React).
+                </p>
+                <div className={`card-buttons ${!proofmint.live ? "single" : ""}`}>
+                  {proofmint.live && (
+                    <a
+                      href={proofmint.live}
+                      className="card-button--site"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      Site
+                    </a>
+                  )}
+                  <a
+                    href={proofmint.repo}
+                    className="card-button--code"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Code
+                  </a>
+                </div>
               </div>
 
-              <div className="cards flex-center">
-                <div className="card">
-                  <img src={`${base}img/projects/project_1.png`} alt="Proofmint dApp" />
-                  <h3 className="card-title">Proofmint</h3>
-                  <p className="card-description">
-                    Full-stack token crowdsale + NFT receipt dApp (Hardhat, Solidity, React).
-                  </p>
-                  <div className="card-buttons">
-                    <a href="https://cryptomachinegene.github.io/proofmint-project/" className="card-button--site">Site</a>
-                    <a href="https://github.com/CryptoMachineGene/proofmint-project" className="card-button--code">Code</a>
-                  </div>
+              {/* Sakura */}
+              <div className="card">
+                <img src={`${base}img/projects/project_2.png`} alt="Sakura Token" />
+                <h3 className="card-title">Sakura Token (SKR)</h3>
+                <p className="card-description">
+                  Custom ERC-20 token with delegated transfer tests (Solidity + Hardhat).
+                </p>
+                <div className={`card-buttons ${!sakura.live ? "single" : ""}`}>
+                  {sakura.live && (
+                    <a
+                      href={sakura.live}
+                      className="card-button--site"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      Site
+                    </a>
+                  )}
+                  <a
+                    href={sakura.repo}
+                    className="card-button--code"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Code
+                  </a>
                 </div>
+              </div>
 
-                <div className="card">
-                  <img src={`${base}img/projects/project_2.png`} alt="Sakura Token" />
-                  <h3 className="card-title">Sakura Token (SKR)</h3>
-                  <p className="card-description">
-                    Custom ERC-20 token with delegated transfer tests (Solidity + Hardhat).
-                  </p>
-                  <div className="card-buttons">
-                    <a href="#" className="card-button--site">Site</a>
-                    <a href="https://github.com/CryptoMachineGene/sakura-contract" className="card-button--code">Code</a>
-                  </div>
-                </div>
-
-                <div className="card">
-                  <img src={`${base}img/projects/project_3.png`} alt="Solana Hello World" />
-                  <h3 className="card-title">Solana Hello World</h3>
-                  <p className="card-description">
-                    Anchor + Rust Hello World smart contract verified on localnet.
-                  </p>
-                  <div className="card-buttons">
-                    <a href="#" className="card-button--site">Site</a>
-                    <a href="https://github.com/CryptoMachineGene/solana-hello-world" className="card-button--code">Code</a>
-                  </div>
+              {/* Solana Hello */}
+              <div className="card">
+                <img src={`${base}img/projects/project_3.png`} alt="Solana Hello World" />
+                <h3 className="card-title">Solana Hello World</h3>
+                <p className="card-description">
+                  Anchor + Rust Hello World smart contract verified on localnet.
+                </p>
+                <div className={`card-buttons ${!solana.live ? "single" : ""}`}>
+                  {solana.live && (
+                    <a
+                      href={solana.live}
+                      className="card-button--site"
+                      target="_blank"
+                      rel="noreferrer"
+                    >
+                      Site
+                    </a>
+                  )}
+                  <a
+                    href={solana.repo}
+                    className="card-button--code"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Code
+                  </a>
                 </div>
               </div>
             </div>

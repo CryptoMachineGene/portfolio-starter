@@ -28,8 +28,19 @@ export default function Proofmint() {
         </li>
       </ul>
 
-      <div className="pt-4">
-        <RepoButton href="https://github.com/CryptoMachineGene/proofmint-project" />
+      <div className="pt-2">
+        <RepoButton
+          href="https://github.com/CryptoMachineGene/proofmint-project"
+          className="mt-2"
+        />
+        {/*
+          <iframe
+            className="w-full aspect-video rounded-xl border mt-6"
+            src="https://www.youtube.com/embed/XXXXXXXX"
+            title="Proofmint Demo"
+            allowFullScreen
+          />
+          */}
       </div>
     </section>
   );
