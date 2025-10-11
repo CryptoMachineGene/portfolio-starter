@@ -1,9 +1,6 @@
 type Props = {
-  /** External live URL */
   to: string;
-  /** Text (defaults to "Site") */
   label?: string;
-  /** Extra classes (optional) */
   className?: string;
 };
 
@@ -15,13 +12,12 @@ export default function SiteButton({ to, label = "Site", className = "" }: Props
       rel="noreferrer noopener"
       aria-label={`${label} (opens in new tab)`}
       className={[
-        // base: dark, subtle border
         "inline-flex items-center gap-2 px-4 py-2 rounded-xl font-medium transition-all duration-200 ease-out",
-        "bg-[#1c1c1c] text-[#e9e9e9] border border-[#2a2a2a]",
-        // hover: just a bit brighter + gold outline (no white flash)
-        "hover:bg-[#232323] hover:border-[#d4b85f] hover:shadow-[0_0_0_2px_rgba(212,184,95,0.25)_inset]",
-        // active press
-        "active:translate-y-0.5",
+        // base: dark background + gold border + gold text
+        "bg-[#0d0d0d] text-[#d4b85f] border-2 border-[#d4b85f]",
+        // hover: fill gold, invert to dark text/icon
+        "hover:bg-[#d4b85f] hover:text-[#0d0d0d]",
+        "active:translate-y-0.5 active:shadow-none",
         className,
       ].join(" ")}
     >
