@@ -394,3 +394,8 @@ html, body {
 .resume .section:last-of-type {
   margin-bottom: 0;      /* belt-and-suspenders */
 }
+
+/* TEMP: Hide empty profile container gracefully */
+.resume .profile-container {
+  display: none !important;
+}
