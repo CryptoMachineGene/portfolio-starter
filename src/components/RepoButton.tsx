@@ -1,8 +1,8 @@
+// src/components/RepoButton.tsx
 import React from "react";
 
 type Props = {
-  /** External URL to the repository */
-  to: string;
+  to: string;                 // external GitHub link
   className?: string;
 };
 
@@ -12,8 +12,14 @@ export default function RepoButton({ to, className = "" }: Props) {
       href={to}
       target="_blank"
       rel="noreferrer noopener"
-      className={`inline-flex items-center gap-2 px-4 py-2 rounded-xl border-2 border-black bg-yellow-200 text-black font-medium hover:bg-yellow-300 hover:-translate-y-0.5 transition-transform ${className}`}
-      aria-label="Open repository on GitHub"
+      className={[
+        "inline-flex items-center gap-2 px-4 py-2 rounded-xl",
+        "border-2 border-black bg-yellow-200 text-black font-semibold",
+        "hover:bg-yellow-300 hover:-translate-y-0.5",
+        "transition-transform shadow-[0_2px_0_0_rgba(0,0,0,1)]",
+        className,
+      ].join(" ")}
+      aria-label="Open GitHub repository"
     >
       {/* GitHub mark */}
       <svg
