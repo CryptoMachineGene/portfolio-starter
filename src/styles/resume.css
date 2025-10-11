@@ -192,6 +192,10 @@
   justify-content: center;
 }
 
+/* src/styles/resume.css */
+.site-btn:hover { color: #0d0d0d !important; }
+.site-btn:hover svg { color: inherit; }
+
 /* EXPERIENCE */
 .resume .experience-description { max-width: 900px; margin-bottom: 125px; font-size: var(--font-32); position: relative; }
 .resume .experience-description img { position:absolute; top:50%; right:-200px; transform:translate(-50%,-50%); pointer-events:none; }
