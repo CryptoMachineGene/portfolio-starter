@@ -187,11 +187,6 @@
   transition: 250ms;
 }
 
-/* Site button (dark background) */
-.resume .projects .card .card-buttons .card-button--site {
-  background-color: var(--gray);
-}
-
 /* Fallback: center when we add .single */
 .resume .projects .card .card-buttons.single {
   justify-content: center;

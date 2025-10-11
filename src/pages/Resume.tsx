@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import "../styles/resume.css";
 import { PROJECTS } from "../data/projects";
+import RepoButton from "../components/RepoButton";
+import SiteButton from "../components/SiteButton";
 
 export default function Resume() {
   // Use Vite base for public assets so it works on GitHub Pages
@@ -31,9 +33,9 @@ export default function Resume() {
               </div>
 
               <ul className="flex-list list-items-circle">
-                <li><a href="https://www.linkedin.com/"><i className="fab fa-linkedin" /></a></li>
-                <li><a href="https://github.com/CryptoMachineGene"><i className="fab fa-github" /></a></li>
-                <li><a href="https://x.com/CryptoMachineG"><i className="fab fa-twitter" /></a></li>
+                <li><a href="https://www.linkedin.com/" target="_blank" rel="noreferrer noopener" aria-label="LinkedIn"><i className="fab fa-linkedin" /></a></li>
+                <li><a href="https://github.com/CryptoMachineGene" target="_blank" rel="noreferrer noopener" aria-label="GitHub"><i className="fab fa-github" /></a></li>
+                <li><a href="https://x.com/CryptoMachineG" target="_blank" rel="noreferrer noopener" aria-label="X / Twitter"><i className="fab fa-twitter" /></a></li>
               </ul>
             </div>
 
@@ -78,23 +80,9 @@ export default function Resume() {
                 </p>
                 <div className={`card-buttons ${!proofmint.live ? "single" : ""}`}>
                   {proofmint.live && (
-                    <a
-                      href={proofmint.live}
-                      className="card-button--site"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      Site
-                    </a>
+                    <SiteButton to={proofmint.live} className="w-[150px] h-[60px] justify-center" />
                   )}
-                  <a
-                    href={proofmint.repo}
-                    className="card-button--code"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    Code
-                  </a>
+                  <RepoButton to={proofmint.repo} className="w-[150px] h-[60px] justify-center" />
                 </div>
               </div>
 
@@ -107,23 +95,12 @@ export default function Resume() {
                 </p>
                 <div className={`card-buttons ${!sakura.live ? "single" : ""}`}>
                   {sakura.live && (
-                    <a
-                      href={sakura.live}
-                      className="card-button--site"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      Site
-                    </a>
+                    <SiteButton to={sakura.live} className="w-[150px] h-[60px] justify-center" />
                   )}
-                  <a
-                    href={sakura.repo}
-                    className="card-button--code"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    Code
-                  </a>
+                  <RepoButton
+                    to={sakura.repo}
+                    className="w-[150px] h-[60px] justify-center"
+                  />
                 </div>
               </div>
 
@@ -136,23 +113,12 @@ export default function Resume() {
                 </p>
                 <div className={`card-buttons ${!solana.live ? "single" : ""}`}>
                   {solana.live && (
-                    <a
-                      href={solana.live}
-                      className="card-button--site"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      Site
-                    </a>
+                    <SiteButton to={solana.live} className="w-[150px] h-[60px] justify-center" />
                   )}
-                  <a
-                    href={solana.repo}
-                    className="card-button--code"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    Code
-                  </a>
+                  <RepoButton
+                    to={solana.repo}
+                    className="w-[150px] h-[60px] justify-center"
+                  />
                 </div>
               </div>
             </div>
