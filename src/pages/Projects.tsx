@@ -12,11 +12,13 @@ export default function Projects() {
           key={p.key}
           className="p-6 border rounded-2xl shadow-sm hover:shadow-md transition w-full space-y-3 bg-black text-white"
         >
+          {/* card header opens the internal page */}
           <button onClick={() => nav(p.route)} className="text-left w-full">
             <h2 className="text-lg font-semibold">{p.title}</h2>
             <p className="text-sm opacity-80 mt-1">{p.blurb}</p>
           </button>
 
+          {/* buttons row */}
           <div className="flex items-center gap-3 pt-2">
             {p.live && (
               <a
@@ -28,6 +30,8 @@ export default function Projects() {
                 Site
               </a>
             )}
+
+            {/* brand yellow/black with GitHub icon */}
             <RepoButton to={p.repo} />
           </div>
         </div>
