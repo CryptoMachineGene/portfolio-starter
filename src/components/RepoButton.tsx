@@ -14,13 +14,14 @@ export default function RepoButton({ to, className = "", label = "Code" }: Props
       target="_blank"
       rel="noreferrer noopener"
       className={[
-        // brand look
-        "inline-flex items-center gap-2 px-4 py-2 rounded-xl",
-        "border-2 border-black bg-yellow-200 text-black font-medium",
-        "shadow-[0_2px_0_0_rgba(0,0,0,1)]",
-        "hover:bg-yellow-300 hover:-translate-y-0.5",
-        "active:translate-y-0 active:shadow-none",
-        "transition-transform",
+        "inline-flex items-center gap-2 px-4 py-2 rounded-xl font-medium transition-all duration-200 ease-out",
+        // Base: matte black background, gold text and border
+        "border-2 border-[#d4b85f] bg-[#0d0d0d] text-[#d4b85f]",
+        "shadow-[0_2px_0_0_rgba(212,184,95,0.35)]",
+        // Hover: fill gold, switch text/icon to black
+        "hover:bg-[#d4b85f] hover:text-[#0d0d0d] hover:border-[#d4b85f]",
+        // Active press
+        "active:translate-y-0.5 active:shadow-none",
         className,
       ].join(" ")}
       aria-label={`${label} on GitHub`}
