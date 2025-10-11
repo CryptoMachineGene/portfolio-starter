@@ -38,7 +38,7 @@ export default function Resume() {
                     rel="noreferrer noopener"
                     aria-label="LinkedIn Profile"
                   >
-                    <i className="fab fa-linkedin" aria-hidden="true" focusable="false" />
+                    <i className="fab fa-linkedin" aria-hidden="true" />
                   </a>
                 </li>
                 <li>
@@ -48,7 +48,7 @@ export default function Resume() {
                     rel="noreferrer noopener"
                     aria-label="GitHub Profile"
                   >
-                    <i className="fab fa-github" aria-hidden="true" focusable="false" />
+                    <i className="fab fa-github" aria-hidden="true" />
                   </a>
                 </li>
                 <li>
@@ -58,7 +58,7 @@ export default function Resume() {
                     rel="noreferrer noopener"
                     aria-label="Twitter Profile"
                   >
-                    <i className="fab fa-twitter" aria-hidden="true" focusable="false" />
+                    <i className="fab fa-twitter" aria-hidden="true" />
                   </a>
                 </li>
               </ul>
@@ -74,12 +74,12 @@ export default function Resume() {
               <li>United States</li>
               <hr />
               <li><a
-  href="mailto:gene@newworldcryptos.io"
-  aria-label="Email Eugene McGrath at gene@newworldcryptos.io"
->
-  gene@newworldcryptos.io
-</a>
-</li>
+                  href="mailto:gene@newworldcryptos.io"
+                  aria-label="Email Eugene McGrath at gene@newworldcryptos.io"
+                >
+                  gene@newworldcryptos.io
+                </a>
+              </li>
             </ul>
           </div>
         </header>
