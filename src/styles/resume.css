@@ -192,10 +192,6 @@
   justify-content: center;
 }
 
-/* RepoButton color locks so hover text/icon flip to black on gold */
-.repo-btn { color: #d4b85f !important; }
-.repo-btn:hover { color: #0d0d0d !important; }
-
 /* EXPERIENCE */
 .resume .experience-description { max-width: 900px; margin-bottom: 125px; font-size: var(--font-32); position: relative; }
 .resume .experience-description img { position:absolute; top:50%; right:-200px; transform:translate(-50%,-50%); pointer-events:none; }
@@ -400,5 +396,5 @@ html, body {
 }
 
 .resume .profile-container::before {
-  content: "EM"; /* ← your initials */
+  content: "EM"; 
 }
