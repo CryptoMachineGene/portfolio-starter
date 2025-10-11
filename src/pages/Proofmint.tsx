@@ -30,9 +30,9 @@ export default function Proofmint() {
 
       <div className="pt-2">
         <RepoButton
-          href="https://github.com/CryptoMachineGene/proofmint-project"
-          className="mt-2"
-        />
+         to="https://github.com/CryptoMachineGene/proofmint-project"
+         className="mt-4"
+       />
         {/*
           <iframe
             className="w-full aspect-video rounded-xl border mt-6"

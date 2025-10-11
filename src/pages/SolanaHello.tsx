@@ -30,8 +30,8 @@ export default function SolanaHello() {
 
       <div className="pt-2">
         <RepoButton
-          href="https://github.com/CryptoMachineGene/solana-hello-world"
-          className="mt-2"
+          to="https://github.com/CryptoMachineGene/solana-hello-world"
+          className="mt-4"
         />
         {/*
           <iframe
