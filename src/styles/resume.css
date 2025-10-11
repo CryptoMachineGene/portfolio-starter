@@ -192,22 +192,14 @@
   background-color: var(--gray);
 }
 
-/* Code button (outlined) */
-.resume .projects .card .card-buttons .card-button--code {
-  border: 1px solid var(--gray);
-}
-
-/* Hover effects */
-.resume .projects .card .card-buttons a:hover {
-  background-color: var(--white);
-  color: var(--black);
-}
-
 /* Fallback: center when we add .single */
 .resume .projects .card .card-buttons.single {
   justify-content: center;
 }
 
+/* RepoButton color locks so hover text/icon flip to black on gold */
+.repo-btn { color: #d4b85f !important; }
+.repo-btn:hover { color: #0d0d0d !important; }
 
 /* EXPERIENCE */
 .resume .experience-description { max-width: 900px; margin-bottom: 125px; font-size: var(--font-32); position: relative; }
