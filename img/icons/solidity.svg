@@ -1,0 +1,7 @@
+<svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Solidity">
+  <rect width="128" height="128" rx="16" fill="#1f2937"/>
+  <g>
+    <path fill="#343434" d="M64 20L36 68l28 40 28-48z"/>
+    <path fill="#828282" d="M64 108l28-48H64L36 60z"/>
+  </g>
+</svg>

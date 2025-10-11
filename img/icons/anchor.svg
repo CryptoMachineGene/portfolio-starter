@@ -1,0 +1,7 @@
+<svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Anchor Framework">
+  <rect width="128" height="128" rx="16" fill="none"/>
+  <circle cx="64" cy="64" r="36" fill="#9333ea" opacity=".25"/>
+  <path fill="#a855f7" d="M64 28v72a36 36 0 0 0 0-72z"/>
+  <path fill="#6b21a8" d="M64 28a36 36 0 0 1 0 72V28z"/>
+  <circle cx="64" cy="64" r="6" fill="#ede9fe"/>
+</svg>

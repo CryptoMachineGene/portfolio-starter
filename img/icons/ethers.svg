@@ -1,0 +1,8 @@
+<svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Ethers.js">
+  <rect width="128" height="128" rx="16" fill="none"/>
+  <g fill="#60a5fa">
+    <path d="M64 14l28 48-28 16-28-16z"/>
+    <path d="M64 114l-28-46 28 15 28-15z" opacity=".7"/>
+  </g>
+  <text x="64" y="120" font-size="0" aria-hidden="true">ethers</text>
+</svg>
