@@ -31,9 +31,36 @@ export default function Resume() {
               </div>
 
               <ul className="flex-list list-items-circle">
-                <li><a href="https://www.linkedin.com/"><i className="fab fa-linkedin" /></a></li>
-                <li><a href="https://github.com/CryptoMachineGene"><i className="fab fa-github" /></a></li>
-                <li><a href="https://x.com/CryptoMachineG"><i className="fab fa-twitter" /></a></li>
+                <li>
+                  <a
+                    href="https://www.linkedin.com/"
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    aria-label="LinkedIn Profile"
+                  >
+                    <i className="fab fa-linkedin" aria-hidden="true" />
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://github.com/CryptoMachineGene"
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    aria-label="GitHub Profile"
+                  >
+                    <i className="fab fa-github" aria-hidden="true" />
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://x.com/CryptoMachineG"
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    aria-label="Twitter Profile"
+                  >
+                    <i className="fab fa-twitter" aria-hidden="true" />
+                  </a>
+                </li>
               </ul>
             </div>
 
@@ -46,7 +73,13 @@ export default function Resume() {
             <ul className="contact-details flex-list">
               <li>United States</li>
               <hr />
-              <li><a href="mailto:gene@newworldcryptos.io">gene@newworldcryptos.io</a></li>
+              <li><a
+                  href="mailto:gene@newworldcryptos.io"
+                  aria-label="Email Eugene McGrath at gene@newworldcryptos.io"
+                >
+                  gene@newworldcryptos.io
+                </a>
+              </li>
             </ul>
           </div>
         </header>
@@ -76,23 +109,53 @@ export default function Resume() {
                 <p className="card-description">
                   Full-stack token crowdsale + NFT receipt dApp (Hardhat, Solidity, React).
                 </p>
-                <div className={`card-buttons ${!proofmint.live ? "single" : ""}`}>
+                <div className="card-buttons">
+                  {/* Site with “external link / chain” icon */}
                   {proofmint.live && (
                     <a
                       href={proofmint.live}
                       className="card-button--site"
                       target="_blank"
-                      rel="noreferrer"
+                      rel="noreferrer noopener"
+                      aria-label="Open Proofmint live site"
                     >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        fill="currentColor"
+                        width="16"
+                        height="16"
+                        style={{ marginRight: 8 }}
+                        aria-hidden="true"
+                        focusable="false"
+                      >
+                        <path d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3z" />
+                        <path d="M5 5h7v2H7v10h10v-5h2v7H5V5z" />
+                      </svg>
                       Site
                     </a>
                   )}
+
+                  {/* Code with GitHub mark */}
                   <a
                     href={proofmint.repo}
                     className="card-button--code"
                     target="_blank"
-                    rel="noreferrer"
+                    rel="noreferrer noopener"
+                    aria-label="Open Proofmint repository on GitHub"
                   >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 16 16"
+                      fill="currentColor"
+                      width="16"
+                      height="16"
+                      style={{ marginRight: 8 }}
+                      aria-hidden="true"
+                      focusable="false"
+                    >
+                      <path d="M8 0C3.58 0 0 3.58 0 8a8 8 0 0 0 5.47 7.59c.4.07.55-.17.55-.38v-1.33c-2.23.49-2.69-1.07-2.69-1.07-.36-.91-.88-1.15-.88-1.15-.72-.49.06-.48.06-.48.8.06 1.22.83 1.22.83.71 1.22 1.86.87 2.32.67.07-.52.28-.87.5-1.07-1.78-.2-3.64-.89-3.64-3.97 0-.88.31-1.6.83-2.17-.08-.2-.36-1.02.08-2.12 0 0 .67-.22 2.2.83A7.66 7.66 0 0 1 8 4.58c.68 0 1.36.09 2 .26 1.53-1.05 2.2-.83 2.2-.83.44 1.1.16 1.92.08 2.12.52.57.83 1.29.83 2.17 0 3.09-1.86 3.76-3.64 3.97.29.25.54.74.54 1.5v2.23c0 .21.15.45.55.38A8 8 0 0 0 16 8c0-4.42-3.58-8-8-8Z" />
+                    </svg>
                     Code
                   </a>
                 </div>
@@ -105,23 +168,51 @@ export default function Resume() {
                 <p className="card-description">
                   Custom ERC-20 token with delegated transfer tests (Solidity + Hardhat).
                 </p>
-                <div className={`card-buttons ${!sakura.live ? "single" : ""}`}>
+                <div className="card-buttons">
                   {sakura.live && (
                     <a
                       href={sakura.live}
                       className="card-button--site"
                       target="_blank"
-                      rel="noreferrer"
+                      rel="noreferrer noopener"
+                      aria-label="Open Sakura Token live site"
                     >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        fill="currentColor"
+                        width="16"
+                        height="16"
+                        style={{ marginRight: 8 }}
+                        aria-hidden="true"
+                        focusable="false"
+                      >
+                        <path d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3z" />
+                        <path d="M5 5h7v2H7v10h10v-5h2v7H5V5z" />
+                      </svg>
                       Site
                     </a>
                   )}
+
                   <a
                     href={sakura.repo}
                     className="card-button--code"
                     target="_blank"
-                    rel="noreferrer"
+                    rel="noreferrer noopener"
+                    aria-label="Open Sakura Token repository on GitHub"
                   >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 16 16"
+                      fill="currentColor"
+                      width="16"
+                      height="16"
+                      style={{ marginRight: 8 }}
+                      aria-hidden="true"
+                      focusable="false"
+                    >
+                      <path d="M8 0C3.58 0 0 3.58 0 8a8 8 0 0 0 5.47 7.59c.4.07.55-.17.55-.38v-1.33c-2.23.49-2.69-1.07-2.69-1.07-.36-.91-.88-1.15-.88-1.15-.72-.49.06-.48.06-.48.8.06 1.22.83 1.22.83.71 1.22 1.86.87 2.32.67.07-.52.28-.87.5-1.07-1.78-.2-3.64-.89-3.64-3.97 0-.88.31-1.6.83-2.17-.08-.2-.36-1.02.08-2.12 0 0 .67-.22 2.2.83A7.66 7.66 0 0 1 8 4.58c.68 0 1.36.09 2 .26 1.53-1.05 2.2-.83 2.2-.83.44 1.1.16 1.92.08 2.12.52.57.83 1.29.83 2.17 0 3.09-1.86 3.76-3.64 3.97.29.25.54.74.54 1.5v2.23c0 .21.15.45.55.38A8 8 0 0 0 16 8c0-4.42-3.58-8-8-8Z" />
+                    </svg>
                     Code
                   </a>
                 </div>
@@ -134,23 +225,51 @@ export default function Resume() {
                 <p className="card-description">
                   Anchor + Rust Hello World smart contract verified on localnet.
                 </p>
-                <div className={`card-buttons ${!solana.live ? "single" : ""}`}>
+                <div className="card-buttons">
                   {solana.live && (
                     <a
                       href={solana.live}
                       className="card-button--site"
                       target="_blank"
-                      rel="noreferrer"
+                      rel="noreferrer noopener"
+                      aria-label="Open Solana Hello World live site"
                     >
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 24 24"
+                        fill="currentColor"
+                        width="16"
+                        height="16"
+                        style={{ marginRight: 8 }}
+                        aria-hidden="true"
+                        focusable="false"
+                      >
+                        <path d="M14 3h7v7h-2V6.41l-9.29 9.3-1.42-1.42 9.3-9.29H14V3z" />
+                        <path d="M5 5h7v2H7v10h10v-5h2v7H5V5z" />
+                      </svg>
                       Site
                     </a>
                   )}
+
                   <a
                     href={solana.repo}
                     className="card-button--code"
                     target="_blank"
-                    rel="noreferrer"
+                    rel="noreferrer noopener"
+                    aria-label="Open Solana Hello World repository on GitHub"
                   >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 16 16"
+                      fill="currentColor"
+                      width="16"
+                      height="16"
+                      style={{ marginRight: 8 }}
+                      aria-hidden="true"
+                      focusable="false"
+                    >
+                      <path d="M8 0C3.58 0 0 3.58 0 8a8 8 0 0 0 5.47 7.59c.4.07.55-.17.55-.38v-1.33c-2.23.49-2.69-1.07-2.69-1.07-.36-.91-.88-1.15-.88-1.15-.72-.49.06-.48.06-.48.8.06 1.22.83 1.22.83.71 1.22 1.86.87 2.32.67.07-.52.28-.87.5-1.07-1.78-.2-3.64-.89-3.64-3.97 0-.88.31-1.6.83-2.17-.08-.2-.36-1.02.08-2.12 0 0 .67-.22 2.2.83A7.66 7.66 0 0 1 8 4.58c.68 0 1.36.09 2 .26 1.53-1.05 2.2-.83 2.2-.83.44 1.1.16 1.92.08 2.12.52.57.83 1.29.83 2.17 0 3.09-1.86 3.76-3.64 3.97.29.25.54.74.54 1.5v2.23c0 .21.15.45.55.38A8 8 0 0 0 16 8c0-4.42-3.58-8-8-8Z" />
+                    </svg>
                     Code
                   </a>
                 </div>
