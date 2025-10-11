@@ -1,98 +1,37 @@
+// src/pages/Sakura.tsx
 import RepoButton from "../components/RepoButton";
 
 export default function Sakura() {
   return (
-    <section className="max-w-2xl mx-auto space-y-6">
-      <h1 className="text-3xl font-bold">Sakura — ERC-20 Token</h1>
-
-      <p className="text-gray-700">
-        Sakura (SKR) is a custom ERC-20 token built with Solidity and Hardhat.  
-        The project implements full <code>transfer</code>, <code>approve</code>, and 
-        <code> transferFrom</code> logic, supported by a comprehensive test suite.
-      </p>
-
-      <ul className="list-disc pl-6 text-gray-700 space-y-2">
-        <li>
-          <strong>Repo:</strong>{" "}
-          <a
-            className="underline"
-            href="https://github.com/CryptoMachineGene/first-crypto"
-            target="_blank"
-            rel="noreferrer"
-          >
-            github.com/CryptoMachineGene/first-crypto
-          </a>
-        </li>
-        <li>
-          <strong>Framework:</strong> Solidity + Hardhat
-        </li>
-        <li>
-          <strong>Status:</strong> Contract tested ✅ — future integration with Proofmint crowdsale planned.
-        </li>
-      </ul>
-
-      <p className="text-sm text-gray-600">
-        Future roadmap: integrate Sakura into the Proofmint crowdsale as an on-chain
-        asset for cross-project interoperability.
-      </p>
-
-      <div className="pt-2">
-        import RepoButton from "../components/RepoButton";
-
-export default function Proofmint() {
-  return (
     <section className="space-y-6">
-      <h1 className="text-3xl font-bold">Proofmint — Crowdsale + NFT Receipt</h1>
+      <h1 className="text-3xl font-bold">Sakura — ERC-20 Token</h1>
       <p className="text-gray-700">
-        v0.9 demo complete: contracts verified, frontend flow working, logs updated (Oct 2, 2025).
-        This page will embed screenshots, a live demo link, and the Sepolia tx log.
+        ERC-20 (SKR) with approve/transferFrom tests in Hardhat. Page will get a short demo,
+        screenshots, and deployment notes.
       </p>
+
       <ul className="list-disc pl-6 text-gray-700 space-y-2">
         <li>
           <strong>Repo:</strong>{" "}
           <a
             className="underline"
-            href="https://github.com/CryptoMachineGene/proofmint-project"
+            href="https://github.com/CryptoMachineGene/sakura"
             target="_blank"
             rel="noreferrer"
           >
-            github.com/CryptoMachineGene/proofmint-project
+            github.com/CryptoMachineGene/sakura
           </a>
         </li>
         <li>
-          <strong>Latest tag:</strong> <code>v0.9-demo</code>
+          <strong>Status:</strong> tests green; contracts organized; tasks scripted.
         </li>
         <li>
-          <strong>Next steps:</strong> add live link, ABIs, and short demo script.
+          <strong>Next steps:</strong> add ABI export + quickstart in README.
         </li>
       </ul>
 
       <div className="pt-2">
-        <RepoButton
-          to="https://github.com/CryptoMachineGene/sakura"
-          className="mt-4"
-        />
-        {/*
-          <iframe
-            className="w-full aspect-video rounded-xl border mt-6"
-            src="https://www.youtube.com/embed/XXXXXXXX"
-            title="Proofmint Demo"
-            allowFullScreen
-          />
-          */}
-      </div>
-    </section>
-  );
-}
-
-        {/*
-          <iframe
-            className="w-full aspect-video rounded-xl border mt-6"
-            src="https://www.youtube.com/embed/XXXXXXXX"
-            title="Sakura Token Demo"
-            allowFullScreen
-          />
-        */}
+        <RepoButton to="https://github.com/CryptoMachineGene/sakura" className="mt-4" />
       </div>
     </section>
   );
