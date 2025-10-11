@@ -5,6 +5,11 @@
   box-sizing: border-box;
 }
 
+.resume a:focus-visible {
+  outline: 2px solid #8e6eea;
+  outline-offset: 3px;
+}
+
 .resume {
   --black: #060003;
   --gray: #242123;
@@ -18,6 +23,9 @@
   color: var(--white);
   background-color: var(--black);
   overflow-x: hidden;
+
+  --brand-yellow: #fef08a;     /* Tailwind yellow-200 */
+  --brand-yellow-hover: #fde047; /* Tailwind yellow-300 */
 }
 
 /* Full-bleed HERO */
@@ -163,51 +171,68 @@
 .resume .projects .card img { width: 100%; max-width: 325px; height: auto; margin: 0 auto 16px; }
 .resume .projects .card .card-title { font-size: 24px; margin-bottom: 8px; }
 .resume .projects .card .card-description { margin-bottom: 60px; }
-/* PROJECT BUTTONS — dynamic centering + original colors */
+
+/* PROJECT BUTTONS — dynamic centering + brand styling */
 .resume .projects .card .card-buttons {
   display: flex;
-  justify-content: space-between;      /* default for two buttons */
-  gap: 0.75rem;                        /* adds spacing between */
+  justify-content: space-between;
+  gap: 0.75rem;
 }
 
-/* Center buttons if there's only one child */
-.resume .projects .card .card-buttons:has(a:nth-child(1):last-child) {
+/* Center when only one button */
+.resume .projects .card .card-buttons.single {
   justify-content: center;
 }
 
-/* Button base styles */
+/* Base button */
 .resume .projects .card .card-buttons a {
   width: 150px;
   height: 60px;
   display: flex;
   justify-content: center;
   align-items: center;
-  color: var(--white);
   border-radius: 12px;
-  transition: 250ms;
+  font-weight: 600;
+  transition: transform 150ms ease, background-color 150ms ease, color 150ms ease, box-shadow 150ms ease;
+  outline: none;
 }
 
-/* Site button (dark background) */
-.resume .projects .card .card-buttons .card-button--site {
-  background-color: var(--gray);
-}
-
-/* Code button (outlined) */
+/* Code = brand yellow, black border */
 .resume .projects .card .card-buttons .card-button--code {
-  border: 1px solid var(--gray);
+  background-color: var(--brand-yellow);
+  color: var(--black);
+  border: 2px solid var(--black);
+  box-shadow: 0 2px 0 0 var(--black);
+}
+.resume .projects .card .card-buttons .card-button--code:hover {
+  background-color: var(--brand-yellow-hover);
+  transform: translateY(-2px);
+}
+.resume .projects .card .card-buttons .card-button--code:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+.resume .projects .card .card-buttons .card-button--code:focus-visible {
+  box-shadow: 0 0 0 3px rgba(0,0,0,0.6);
 }
 
-/* Hover effects */
-.resume .projects .card .card-buttons a:hover {
+/* Site = white w/ black outline (pairs nicely with yellow) */
+.resume .projects .card .card-buttons .card-button--site {
   background-color: var(--white);
   color: var(--black);
+  border: 2px solid var(--black);
+  box-shadow: 0 2px 0 0 var(--black);
 }
-
-/* Fallback: center when we add .single */
-.resume .projects .card .card-buttons.single {
-  justify-content: center;
+.resume .projects .card .card-buttons .card-button--site:hover {
+  transform: translateY(-2px);
 }
-
+.resume .projects .card .card-buttons .card-button--site:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+.resume .projects .card .card-buttons .card-button--site:focus-visible {
+  box-shadow: 0 0 0 3px rgba(0,0,0,0.6);
+}
 
 /* EXPERIENCE */
 .resume .experience-description { max-width: 900px; margin-bottom: 125px; font-size: var(--font-32); position: relative; }
@@ -221,14 +246,6 @@
 
 /* SKILLS */
 .resume .skills { background-image: url('/img/Vector.png'); background-repeat:no-repeat; background-size:cover; }
-.skill-cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
-  justify-items: center;
-  gap: 1.25rem 1.25rem;
-  max-width: 640px;
-  margin: 0 auto;
-}
 
 /* Universal style for all cards */
 .skill-card {
@@ -379,6 +396,28 @@
 @media (max-width: 767px) {
   .resume .header, .resume .section { padding: 40px; min-height: 0; }
   .resume h1 { --font-96: clamp(34px, 8vw, 54px); line-height: 1.1; }
+}
+
+/* Allow wrapping */
+.resume .projects .card .card-buttons { flex-wrap: wrap; }
+
+/* Mobile stack */
+@media (max-width: 640px) {
+  .resume .projects .card .card-buttons {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.4rem;
+  }
+  .resume .projects .card .card-buttons a {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 640px) {
+  .resume .projects .card .card-buttons a {
+    min-height: 64px;  /* slightly taller touch target */
+  }
 }
 
 html, body {
