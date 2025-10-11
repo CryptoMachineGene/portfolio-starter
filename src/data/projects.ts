@@ -16,7 +16,7 @@ export const PROJECTS: Project[] = [
       "Full-stack dApp on Sepolia with owner withdraw, optional NFT receipt, and a documented demo flow.",
     route: "/proofmint",
     repo: "https://github.com/CryptoMachineGene/proofmint-project",
-    // live: "https://cryptomachinegene.github.io/proofmint-project/", 
+    live: "https://cryptomachinegene.github.io/proofmint-project/", 
     featured: true,
   },
   {
