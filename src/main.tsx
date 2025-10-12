@@ -7,6 +7,7 @@ import Home from './pages/Home'
 import Proofmint from './pages/Proofmint'
 import SolanaHello from './pages/SolanaHello'
 import Sakura from './pages/Sakura'
+import AMM from "./pages/AMM";
 import Projects from './pages/Projects'
 import About from './pages/About'
 import NotFound from './pages/NotFound'
@@ -23,6 +24,7 @@ const router = createHashRouter([
       { path: 'proofmint', element: <Proofmint /> },
       { path: 'solana-hello', element: <SolanaHello /> },
       { path: 'sakura', element: <Sakura /> },
+      { path: 'amm', element: <AMM /> },
       { path: 'projects', element: <Projects /> },
       { path: 'about', element: <About /> },
       { path: '*', element: <NotFound /> },

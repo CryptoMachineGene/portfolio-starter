@@ -37,4 +37,13 @@ export const PROJECTS: Project[] = [
     repo: "https://github.com/CryptoMachineGene/sakura", 
     featured: true,
   },
+  {
+    key: "amm",
+    title: "AMM Prototype (Constant-Product DEX)",
+    blurb:
+      "Constant-product market maker in Solidity + Foundry with a lightweight React/Tailwind UI for swap simulation.",
+    route: "/amm",
+    repo: "https://https://github.com/CryptoMachineGene/amm", 
+    featured: false,
+  },
 ];

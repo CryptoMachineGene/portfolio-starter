@@ -120,11 +120,37 @@
 .resume .profile-container .profile { width: 80px; height: 80px; border-radius: 50%; object-fit: cover; }
 .resume .profile-container .ring { width: 96px; height: 96px; }
 
-/* Social icon sizing refinement */
-.resume .list-items-circle li a .fab {
+/* Social list: remove bullets + layout */
+.resume .flex-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 12px;
+}
+.resume .flex-list li { list-style: none; }
+
+/* Circle buttons */
+.resume .list-items-circle li a {
   width: 52px;
   height: 52px;
+  display: grid;
+  place-items: center;
+  border-radius: 9999px;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.18);
+  color: #fff;
+  transition: transform 120ms ease, background 120ms ease;
+}
+.resume .list-items-circle li a:hover {
+  transform: translateY(-1px);
+  background: rgba(255,255,255,0.16);
+}
+
+/* Font Awesome 6 brand icon sizing (FA5 .fab -> FA6 .fa-brands) */
+.resume .list-items-circle li a .fa-brands {
   font-size: 20px;
+  line-height: 1;
 }
 
 /* PROFILE BADGE — final */
