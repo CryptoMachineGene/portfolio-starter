@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { useEffect } from "react";  
 import "../styles/resume.css";
 import { PROJECTS } from "../data/projects";
 import RepoButton from "../components/RepoButton";
@@ -22,6 +23,24 @@ export default function Resume() {
     );
   }
 
+  // Reveal-on-scroll
+  useEffect(() => {
+    const els = Array.from(document.querySelectorAll<HTMLElement>(".reveal"));
+    const io = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((e) => {
+          if (e.isIntersecting) {
+            e.target.classList.add("visible");
+            io.unobserve(e.target); // reveal once
+          }
+        });
+      },
+      { threshold: 0.12, rootMargin: "0px 0px -40px 0px" }
+    );
+    els.forEach((el) => io.observe(el));
+    return () => io.disconnect();
+  }, []);
+
   return (
     <div className="resume">
       {/* ===== Gradient Header ===== */}
@@ -31,13 +50,19 @@ export default function Resume() {
             <div className="header-links flex-start">
               {/* Use your real avatar here (keeps the ring overlay) */}
               <div className="profile-container">
-                <img className="profile" src={`${base}img/gene-avatar.png`} alt="Eugene McGrath" />
+                <img
+                  className="profile"
+                  src={`${base}img/gene-avatar.png`}
+                  alt="Eugene McGrath"
+                  width={96}
+                  height={96}
+                  decoding="async"
+                />
                 <img className="ring" src={`${base}img/Ring.svg`} alt="" aria-hidden="true" />
               </div>
-
               <ul className="flex-list list-items-circle">
                 <li>
-                  <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer noopener" aria-label="LinkedIn">
+                  <a href="https://www.linkedin.com/in/eugene-mcgrath-550b4897/" target="_blank" rel="noreferrer noopener" aria-label="LinkedIn">
                     <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true">
                       <path fill="currentColor" d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-11.5 6H5.5v11h2V9M6.5 5.75A1.25 1.25 0 1 0 6.5 8.25A1.25 1.25 0 0 0 6.5 5.75M20 14.5c0-3.04-1.62-4.5-3.78-4.5c-1.74 0-2.52.96-2.96 1.63V9H11v11h2.26v-5.35c0-1.41.27-2.77 2.01-2.77c1.71 0 1.73 1.6 1.73 2.86V20H20v-5.5Z"/>
                     </svg>
@@ -70,7 +95,7 @@ export default function Resume() {
       <main>
         {/* ABOUT */}
         <section className="section about">
-           <div className="section-inner space-y-4 text-[1.05rem] leading-7">
+           <div className="section-inner space-y-4 text-[1.05rem] leading-7 reveal">
             <h2 className="sr-only">About</h2>
             <p className="text-neutral-200">
               <strong>Blockchain Developer | Smart-Contract Engineer | Web3 Builder</strong>
@@ -86,6 +111,17 @@ export default function Resume() {
               <li>🏆 Dapp University Blockchain Developer Mentorship</li>
               <li>🏆 EatTheBlocks Certified Web3 Developer</li>
             </ul>
+            <div className="pt-2">
+              <a
+                href={`mailto:gene@newworldcryptos.io?subject=Hello%20Eugene&body=Hi%20Eugene,%0D%0A%0D%0A`}
+                className="inline-flex items-center justify-center rounded-2xl px-4 py-2 text-sm font-medium
+                           border border-[hsl(var(--brand))] bg-transparent text-white
+                           hover:bg-[hsl(var(--brand))] hover:text-black focus:outline-none
+                           focus:ring-2 focus:ring-[hsl(var(--brand))]/70"
+              >
+                Email Me
+              </a>
+            </div>
           </div>
         </section>
 
@@ -93,8 +129,15 @@ export default function Resume() {
         <section className="section projects">
           <div className="cards flex-center">
             {/* Proofmint */}
-            <div className="card">
-              <img src={`${base}img/projects/project_1.png`} alt="Proofmint dApp" />
+            <div className="card reveal" data-delay="0">
+              <img
+                loading="lazy"
+                decoding="async"
+                width={640} 
+                height={360}
+                src={`${base}img/projects/project_1.png`}
+                alt="Proofmint dApp"
+              />
               <h3 className="card-title">Proofmint</h3>
               <p className="card-description">
                 Full-stack token crowdsale + NFT receipt dApp (Hardhat, Solidity, React).
@@ -108,8 +151,15 @@ export default function Resume() {
             </div>
 
             {/* Sakura */}
-            <div className="card">
-              <img src={`${base}img/projects/project_2.png`} alt="Sakura Token" />
+            <div className="card reveal" data-delay="100">
+              <img
+                loading="lazy"
+                decoding="async"
+                width={640} 
+                height={360}
+                src={`${base}img/projects/project_2.png`}
+                alt="Sakura Token"
+              />
               <h3 className="card-title">Sakura Token (SKR)</h3>
               <p className="card-description">
                 Custom ERC-20 token with delegated transfer tests (Solidity + Hardhat).
@@ -123,8 +173,15 @@ export default function Resume() {
             </div>
 
             {/* Solana Hello */}
-            <div className="card">
-              <img src={`${base}img/projects/project_3.png`} alt="Solana Hello World" />
+            <div className="card reveal" data-delay="200">
+              <img
+                loading="lazy"
+                decoding="async"
+                width={640} 
+                height={360}
+                src={`${base}img/projects/project_3.png`}
+                alt="Solana Hello World"
+              />
               <h3 className="card-title">Solana Hello World</h3>
               <p className="card-description">
                 Anchor + Rust Hello World smart contract verified on localnet.
@@ -141,7 +198,7 @@ export default function Resume() {
 
         {/* SKILLS */}
         <section className="section skills pb-16">
-          <div className="section-inner">
+          <div className="section-inner reveal" data-delay="100">
             <h2>Tech Stack</h2>
 
             {/* FRONTEND */}
