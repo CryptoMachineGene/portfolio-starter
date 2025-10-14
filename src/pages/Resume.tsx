@@ -24,7 +24,7 @@ export default function Resume() {
 
   return (
     <div className="resume">
-      {/* ===== Gradient Header (now the only hero) ===== */}
+      {/* ===== Gradient Header ===== */}
       <div className="full-bleed">
         <header className="header">
           <div className="hero-inner">
@@ -68,9 +68,9 @@ export default function Resume() {
 
       {/* ===== MAIN CONTENT ===== */}
       <main>
-        {/* ABOUT — merged solo copy + achievements */}
+        {/* ABOUT */}
         <section className="section about">
-          <div className="section-inner space-y-4">
+           <div className="section-inner space-y-4 text-[1.05rem] leading-7">
             <h2 className="sr-only">About</h2>
             <p className="text-neutral-200">
               <strong>Blockchain Developer | Smart-Contract Engineer | Web3 Builder</strong>
@@ -82,7 +82,6 @@ export default function Resume() {
             <p className="text-neutral-300">
               Clean code, verifiable logic, and reliable results — engineering that speaks for itself.
             </p>
-
             <ul className="achievements">
               <li>🏆 Dapp University Blockchain Developer Mentorship</li>
               <li>🏆 EatTheBlocks Certified Web3 Developer</li>

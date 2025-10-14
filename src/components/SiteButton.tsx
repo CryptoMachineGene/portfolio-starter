@@ -1,9 +1,14 @@
-// src/components/SiteButton.tsx
 type Props = {
   to: string;
   className?: string;
   label?: string;
 };
+
+const base =
+  "inline-flex items-center justify-center rounded-2xl px-4 py-2 text-sm font-medium " +
+  "transition border border-[hsl(var(--brand))] " +
+  "bg-transparent text-white hover:bg-[hsl(var(--brand))] hover:text-black " +
+  "focus:outline-none focus:ring-2 focus:ring-[hsl(var(--brand))]/70";
 
 export default function SiteButton({ to, className = "", label = "Site" }: Props) {
   return (
