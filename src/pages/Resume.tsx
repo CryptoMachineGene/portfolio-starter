@@ -3,17 +3,15 @@ import "../styles/resume.css";
 import { PROJECTS } from "../data/projects";
 import RepoButton from "../components/RepoButton";
 import SiteButton from "../components/SiteButton";
+import ProfileAvatar from "../components/ProfileAvatar"; // ✅ add
 
 export default function Resume() {
-  // Use Vite base for public assets so it works on GitHub Pages
-  const base = import.meta.env.BASE_URL; // e.g., "/portfolio-starter/"
+  const base = import.meta.env.BASE_URL; // e.g. "/portfolio-starter/"
 
-  // safer lookups
   const proofmint = PROJECTS.find(p => p.key === "proofmint");
-  const sakura = PROJECTS.find(p => p.key === "sakura");
-  const solana = PROJECTS.find(p => p.key === "solana-hello");
+  const sakura    = PROJECTS.find(p => p.key === "sakura");
+  const solana    = PROJECTS.find(p => p.key === "solana-hello");
 
-  // tiny guard
   if (!proofmint || !sakura || !solana) {
     return (
       <div className="container-nwc py-10">
@@ -26,18 +24,32 @@ export default function Resume() {
   }
 
   return (
-    <>
-      {/* Top breadcrumb (optional) */}
-      <div className="container-nwc pt-6">
-        <Link to="/resume" className="text-sm text-gray-600 hover:underline">
-          ← Back to Resume
-        </Link>
-      </div>
+    <div className="resume">
+      {/* ===== Solo hero block (photo + name + blurb) ===== */}
+      <header className="container-nwc py-10 flex flex-col items-center text-center gap-4">
+        <ProfileAvatar size={120} />
+        <h1 className="text-4xl md:text-5xl font-semibold text-white">Eugene McGrath</h1>
 
-      <div className="resume full-bleed">
+        <div className="text-neutral-300 max-w-prose space-y-2">
+          <p>
+            <strong>
+              Blockchain Developer&nbsp;|&nbsp;Smart-Contract Engineer&nbsp;|&nbsp;Web3 Builder
+            </strong>
+          </p>
+          <p>
+            Focused on decentralized systems and real-world utility. I design, deploy, and test
+            full-stack dApps using Solidity, Hardhat, Foundry, and React&nbsp;+&nbsp;TypeScript.
+          </p>
+          <p>Clean code, verifiable logic, and reliable results — engineering that speaks for itself.</p>
+        </div>
+      </header>
+
+      {/* ===== Your original gradient header stays below (unchanged) ===== */}
+      <div className="full-bleed">
         <header className="header">
           <div className="hero-inner">
             <div className="header-links flex-start">
+              {/* Old ring/profile visuals kept — feel free to remove this block if you prefer only the avatar above */}
               <div className="profile-container">
                 <img className="profile" src={`${base}img/profile.jpg`} alt="Profile" />
                 <img className="ring" src={`${base}img/Ring.svg`} alt="Ring Border" />
@@ -46,7 +58,6 @@ export default function Resume() {
               <ul className="flex-list list-items-circle">
                 <li>
                   <a href="https://www.linkedin.com/" target="_blank" rel="noreferrer noopener" aria-label="LinkedIn">
-                    {/* LinkedIn */}
                     <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true">
                       <path fill="currentColor" d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-11.5 6H5.5v11h2V9M6.5 5.75A1.25 1.25 0 1 0 6.5 8.25A1.25 1.25 0 0 0 6.5 5.75M20 14.5c0-3.04-1.62-4.5-3.78-4.5c-1.74 0-2.52.96-2.96 1.63V9H11v11h2.26v-5.35c0-1.41.27-2.77 2.01-2.77c1.71 0 1.73 1.6 1.73 2.86V20H20v-5.5Z"/>
                     </svg>
@@ -54,7 +65,6 @@ export default function Resume() {
                 </li>
                 <li>
                   <a href="https://github.com/CryptoMachineGene" target="_blank" rel="noreferrer noopener" aria-label="GitHub">
-                    {/* GitHub */}
                     <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true">
                       <path fill="currentColor" d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.18-3.37-1.18c-.46-1.17-1.12-1.48-1.12-1.48c-.91-.62.07-.61.07-.61c1 .07 1.53 1.04 1.53 1.04c.9 1.53 2.36 1.09 2.94.83c.09-.66.35-1.1.63-1.35c-2.22-.25-4.55-1.11-4.55-4.95c0-1.09.39-1.98 1.03-2.68c-.1-.25-.45-1.27.1-2.65c0 0 .84-.27 2.75 1.02A9.56 9.56 0 0 1 12 6.8c.85 0 1.7.11 2.5.33c1.9-1.29 2.74-1.02 2.74-1.02c.55 1.38.2 2.4.1 2.65c.64.7 1.03 1.59 1.03 2.68c0 3.85-2.34 4.7-4.57 4.95c.36.31.68.92.68 1.86v2.76c0 .27.18.58.69.48A10 10 0 0 0 12 2Z"/>
                     </svg>
@@ -62,7 +72,6 @@ export default function Resume() {
                 </li>
                 <li>
                   <a href="https://x.com/CryptoMachineG" target="_blank" rel="noreferrer noopener" aria-label="X / Twitter">
-                    {/* X / Twitter */}
                     <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true">
                       <path fill="currentColor" d="M17.53 3H20l-5.5 6.29L21 21h-5.5l-4.3-5.61L5.96 21H4l6-6.86L3 3h5.6l3.9 5.23L17.53 3Zm-1.93 16h1.53L8.53 5H7l8.6 14Z"/>
                     </svg>
@@ -87,6 +96,7 @@ export default function Resume() {
           </div>
         </header>
 
+        {/* ====== MAIN CONTENT (unchanged) ====== */}
         <main>
           {/* ABOUT */}
           <section className="section about">
@@ -238,6 +248,11 @@ export default function Resume() {
           </section>
         </main>
       </div>
-    </>
+
+      {/* Footer */}
+      <footer className="container-nwc py-8 text-neutral-400">
+        <Link to="/resume" className="underline">← Back to Resume</Link>
+      </footer>
+    </div>
   );
 }
