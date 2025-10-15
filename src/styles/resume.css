@@ -2,6 +2,10 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  :root {
+  /* amber-ish */
+  --brand: 45 100% 52%;
+  }
 }
 
 .resume {
@@ -27,9 +31,6 @@
   transform: translateX(-50%);
   padding-block: clamp(32px, 6vw, 96px);
   padding-inline: clamp(32px, 6vw, 96px);
-  background-image: url('/img/Background.png');
-  background-repeat: no-repeat;
-  background-size: cover;
   color: var(--black);
 }
 
@@ -80,54 +81,27 @@
 .resume .flex-list { display: flex; justify-content: center; align-items: center; flex-wrap: wrap; list-style: none; }
 .resume .flex-list li { margin: 12px; transition: 250ms ease all; }
 .resume .flex-list li a { color: var(--white); display: block; transition: 250ms ease all; }
-.resume .list-items-circle li a { border: 2px solid var(--black); border-radius: 50%; }
 .resume .list-items-circle li a:hover { background-color: var(--white); border-color: var(--white); }
 .resume .list-items-circle li a .fab { width: 80px; height: 80px; font-size: 30px; display:flex; justify-content:center; align-items:center; border-radius:50%; transition:250ms; }
 .resume .list-items-circle li a:hover .fab { color: var(--black); }
 .resume .flex-list hr { height: 30px; margin: 0 50px; border: 1px solid var(--white); opacity: 0.25; }
 
-/* WRAPPER PADDING */
-.resume .header, .resume .section { min-height: 850px; padding: 110px; }
-
 /* HEADER (hero) */
-.resume .header {
-  background-image: url('/img/Background.png');
-  background-repeat: no-repeat;
-  background-size: cover;
-  display: flex; flex-direction: column; justify-content: flex-end; align-items: flex-start;
-  color: var(--black);
-}
 .resume .header .header-links, .resume .header h1 { margin-bottom: 45px; }
 .resume .header .flex-list li a { color: var(--black); }
 .resume .header .flex-list li:hover, .resume .header .flex-list li a:hover { color: var(--white); }
 .resume .header .flex-list hr { border-color: var(--black); }
 
-/* HERO LAYOUT REFINEMENTS */
-.resume .hero-inner {
-  width: min(1100px, 100%);
-  margin: 0 auto;
-}
+.header .hero-inner { gap: 12px; }
+.header .header-links { margin-bottom: 8px; }
+.header h1 { margin-top: 6px; letter-spacing: -0.01em; }
+
 
 .resume {
   --font-96: clamp(42px, 6.5vw, 84px); /* smaller heading for better scaling */
 }
 
 .resume h1 { line-height: 1.05; }
-
-/* Header polish */
-.header .hero-inner {
-  gap: 14px;               /* tighter spacing between avatar + socials */
-}
-
-.header h1 {
-  margin-top: 10px;        /* pull the name closer to the top cluster */
-  letter-spacing: -0.01em; /* subtle weight */
-}
-
-/* Profile + Ring alignment fix */
-.resume .profile-container { width: 96px; height: 96px; min-width: 96px; }
-.resume .profile-container .profile { width: 80px; height: 80px; border-radius: 50%; object-fit: cover; }
-.resume .profile-container .ring { width: 96px; height: 96px; }
 
 /* Social list: remove bullets + layout */
 .resume .flex-list {
@@ -162,30 +136,30 @@
   line-height: 1;
 }
 
-/* PROFILE BADGE — final */
-.resume .profile-container {
+.profile-container {
   position: relative;
-  width: 96px; height: 96px; min-width: 96px;  /* keep 96 */
-  margin: 12px;
+  width: 96px;
+  height: 96px;
+  border-radius: 9999px;
+  overflow: hidden;               /* ⬅ hides any visible square edges */
+  isolation: isolate;
 }
 
-.resume .profile-container .profile {
-  position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
-  width: 80px; height: 80px; border-radius: 50%; object-fit: cover;
-}
-.resume .profile-container .ring {
-  position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
-  width: 96px; height: 96px;                      /* keep 96 */
+.profile-container .profile {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;              /* ⬅ proper crop */
+  display: block;
+  border-radius: 9999px;
 }
 
-
-/* ABOUT */
-.resume .about {
-  background-image: url('/img/Vector.png');
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
+.profile-container .ring {
+  position: absolute;
+  inset: -6px;                    /* ⬅ grow ring slightly around photo */
+  pointer-events: none;
 }
+
+  /* ABOUT */
 .resume .about h2 { max-width: 900px; font-size: var(--font-40); margin-bottom: 180px; }
 .resume .about .achievements { list-style: none; }
 .resume .about .achievements li { margin: 15px 0; }
@@ -227,9 +201,46 @@
   justify-content: center;
 }
 
-/* src/styles/resume.css */
+/* Belt-and-suspenders for Site button default state */
+.site-btn {
+  background: transparent !important;
+  border: 1px solid hsl(var(--brand));
+  color: #fff;
+}
 .site-btn:hover { color: #0d0d0d !important; }
 .site-btn:hover svg { color: inherit; }
+
+/* --- Buttons: enforce proper hover inversion --- */
+.site-btn {
+  background: transparent;                  /* drop the !important */
+  border: 1px solid hsl(var(--brand));
+  color: #fff;
+  transition: background-color .2s ease, color .2s ease, border-color .2s ease;
+}
+.site-btn svg { color: currentColor; }      /* icon always follows text color */
+
+.site-btn:hover,
+.site-btn:focus-visible {
+  background: hsl(var(--brand)) !important; /* force the fill */
+  border-color: hsl(var(--brand)) !important;
+  color: #0d0d0d !important;                /* black text on yellow */
+}
+
+/* Repo/GitHub outline button (same behavior) */
+.repo-btn {
+  background: transparent;
+  border: 1px solid hsl(var(--brand));
+  color: #fff;
+  transition: background-color .2s ease, color .2s ease, border-color .2s ease;
+}
+.repo-btn svg { color: currentColor; }
+
+.repo-btn:hover,
+.repo-btn:focus-visible {
+  background: hsl(var(--brand)) !important;
+  border-color: hsl(var(--brand)) !important;
+  color: #0d0d0d !important;
+}
 
 /* EXPERIENCE */
 .resume .experience-description { max-width: 900px; margin-bottom: 125px; font-size: var(--font-32); position: relative; }
@@ -242,15 +253,6 @@
 .resume .experience .experience-card .card-list .card-list-item { margin: 0 0 16px 16px; opacity: 0.7; }
 
 /* SKILLS */
-.resume .skills { background-image: url('/img/Vector.png'); background-repeat:no-repeat; background-size:cover; }
-.skill-cards {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
-  justify-items: center;
-  gap: 1.25rem 1.25rem;
-  max-width: 640px;
-  margin: 0 auto;
-}
 
 /* Card polish */
 .cards .card {
@@ -435,8 +437,7 @@
   .header h1 {
     font-size: clamp(32px, 7vw, 48px);
     line-height: 1.15;
-  }
-  .header .hero-inner { gap: 10px; }
+  }  
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -447,6 +448,8 @@ html, body {
   overflow-x: hidden;
 }
 
+html { scroll-behavior: smooth; }
+
 .resume {
   background-color: #0b0c10; /* same dark tone */
   min-height: 100vh;
@@ -456,28 +459,6 @@ html, body {
 .resume .section:last-of-type {
   margin-bottom: 0;      /* belt-and-suspenders */
 }
-
-/* TEMP: Placeholder profile ring with initials */
-.resume .profile-container {
-  width: 96px;
-  height: 96px;
-  min-width: 96px;
-  border-radius: 50%;
-  background: radial-gradient(circle at 30% 30%, #8e6eea 0%, #4a3a9f 100%);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-  font-weight: 600;
-  font-size: 1.25rem;
-  letter-spacing: 0.03em;
-  user-select: none;
-}
-
-.resume .profile-container::before {
-  content: "EM"; 
-}
-
 
 .list-items-circle li a {
   background: rgba(0,0,0,.22);
@@ -516,3 +497,26 @@ html, body {
 .reveal[data-delay="200"] { animation-delay: 200ms; }
 .reveal[data-delay="300"] { animation-delay: 300ms; }
 .reveal[data-delay="400"] { animation-delay: 400ms; }
+
+/* --- Buttons: enforce proper hover inversion (final) --- */
+.site-btn,
+.repo-btn {
+  background: transparent;
+  border: 1px solid hsl(var(--brand));
+  color: #fff;
+  transition: background-color .2s ease, color .2s ease, border-color .2s ease;
+}
+.site-btn svg,
+.repo-btn svg { color: currentColor; }
+
+.site-btn:hover,
+.site-btn:focus-visible,
+.repo-btn:hover,
+.repo-btn:focus-visible {
+  background: hsl(var(--brand)) !important;
+  border-color: hsl(var(--brand)) !important;
+  color: #0d0d0d !important;
+}
+
+/* ensure brand exists */
+:root { --brand: 50 100% 50%; } /* tweak to your yellow */

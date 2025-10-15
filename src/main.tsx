@@ -1,7 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { Navigate } from "react-router-dom";
-import { createHashRouter, RouterProvider } from 'react-router-dom'
+import { createHashRouter, RouterProvider, BrowserRouter } from 'react-router-dom'
 import './index.css'
 import App from './App'
 import Home from './pages/Home'
@@ -36,8 +36,10 @@ const router = createHashRouter([
   },
 ])
 
-ReactDOM.createRoot(document.getElementById('root')!).render(
+ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
-    <RouterProvider router={router} />
+    <BrowserRouter basename={import.meta.env.BASE_URL}>
+      <App />
+    </BrowserRouter>
   </React.StrictMode>
-)
+);

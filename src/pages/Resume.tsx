@@ -45,7 +45,15 @@ export default function Resume() {
     <div className="resume">
       {/* ===== Gradient Header ===== */}
       <div className="full-bleed">
-        <header className="header">
+        <header
+          id="top"
+          className="header"
+          style={{
+            backgroundImage: `url(${base}img/Background.png)`,
+            backgroundRepeat: "no-repeat",
+            backgroundSize: "cover",
+          }}
+        >
           <div className="hero-inner">
             <div className="header-links flex-start">
               {/* Use your real avatar here (keeps the ring overlay) */}
@@ -94,7 +102,10 @@ export default function Resume() {
       {/* ===== MAIN CONTENT ===== */}
       <main>
         {/* ABOUT */}
-        <section className="section about">
+        <section
+          className="section about"
+          style={{ backgroundImage: `url(${base}img/Vector.png)` }}
+        >
            <div className="section-inner space-y-4 text-[1.05rem] leading-7 reveal">
             <h2 className="sr-only">About</h2>
             <p className="text-neutral-200">
@@ -197,7 +208,10 @@ export default function Resume() {
         </section>
 
         {/* SKILLS */}
-        <section className="section skills pb-16">
+        <section
+          className="section skills pb-16"
+          style={{ backgroundImage: `url(${base}img/Vector.png)` }}
+        >
           <div className="section-inner reveal" data-delay="100">
             <h2>Tech Stack</h2>
 
@@ -284,7 +298,7 @@ export default function Resume() {
 
       {/* Footer */}
       <footer className="container-nwc py-8 text-neutral-400">
-        <Link to="/resume" className="underline">← Back to Resume</Link>
+        <Link to="/" className="underline">← Back to Home</Link>
       </footer>
     </div>
   );

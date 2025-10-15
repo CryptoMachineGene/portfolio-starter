@@ -1,5 +1,5 @@
 export type Project = {
-  key: "proofmint" | "solana-hello" | "sakura";
+  key: string;
   title: string;
   blurb: string;
   route: string;

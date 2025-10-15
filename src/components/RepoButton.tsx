@@ -1,47 +1,17 @@
-type Props = {
-  /** External repo URL */
-  to: string;
-  /** Extra classes if you need spacing tweaks */
-  className?: string;
-  /** Button label (defaults to "Code") */
-  label?: string;
-};
+type Props = { to: string; className?: string; children?: React.ReactNode };
 
-export default function RepoButton({ to, className = "", label = "Code" }: Props) {
+export default function RepoButton({ to, className = "", children = "Code" }: Props) {
   return (
     <a
       href={to}
       target="_blank"
       rel="noreferrer noopener"
-      className={[
-        "repo-btn",
-        "inline-flex items-center gap-2 px-4 py-2 rounded-xl font-medium transition-all duration-200 ease-out",
-        // Base: matte black background, gold text and border
-        "border-2 border-[#d4b85f] bg-[#0d0d0d] text-[#d4b85f]",
-        "shadow-[0_2px_0_0_rgba(212,184,95,0.35)]",
-        // Hover: fill gold, switch text/icon to black
-        "hover:bg-[#d4b85f] hover:text-[#0d0d0d] hover:border-[#d4b85f]",
-        // Active press
-        "active:translate-y-0.5 active:shadow-none",
-        className,
-      ].join(" ")}
-      aria-label={`${label} on GitHub`}
+      className={["repo-btn inline-flex items-center justify-center gap-2 rounded-xl h-[60px] w-[150px]", className].join(" ")}
     >
-      {/* GitHub mark */}
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        viewBox="0 0 16 16"
-        width="16"
-        height="16"
-        aria-hidden="true"
-        focusable="false"
-      >
-        <path
-          fill="currentColor"
-          d="M8 0C3.58 0 0 3.58 0 8a8 8 0 0 0 5.47 7.59c.4.07.55-.17.55-.38v-1.33c-2.23.49-2.69-1.07-2.69-1.07-.36-.91-.88-1.15-.88-1.15-.72-.49.06-.48.06-.48.8.06 1.22.83 1.22.83.71 1.22 1.86.87 2.32.67.07-.52.28-.87.5-1.07-1.78-.2-3.64-.89-3.64-3.97 0-.88.31-1.6.83-2.17-.08-.2-.36-1.02.08-2.12 0 0 .67-.22 2.2.83A7.66 7.66 0 0 1 8 4.58c.68 0 1.36.09 2 .26 1.53-1.05 2.2-.83 2.2-.83.44 1.1.16 1.92.08 2.12.52.57.83 1.29.83 2.17 0 3.09-1.86 3.76-3.64 3.97.29.25.54.74.54 1.5v2.23c0 .21.15.45.55.38A8 8 0 0 0 16 8c0-4.42-3.58-8-8-8Z"
-        />
+      <svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true">
+        <path fill="currentColor" d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.18-3.37-1.18c-.46-1.17-1.12-1.48-1.12-1.48c-.91-.62.07-.61.07-.61c1 .07 1.53 1.04 1.53 1.04c.9 1.53 2.36 1.09 2.94.83c.09-.66.35-1.1.63-1.35c-2.22-.25-4.55-1.11-4.55-4.95c0-1.09.39-1.98 1.03-2.68c-.1-.25-.45-1.27.1-2.65c0 0 .84-.27 2.75 1.02A9.56 9.56 0 0 1 12 6.8c.85 0 1.7.11 2.5.33c1.9-1.29 2.74-1.02 2.74-1.02c.55 1.38.2 2.4.1 2.65c.64.7 1.03 1.59 1.03 2.68c0 3.85-2.34 4.7-4.57 4.95c.36.31.68.92.68 1.86v2.76c0 .27.18.58.69.48A10 10 0 0 0 12 2Z"/>
       </svg>
-      <span>{label}</span>
+      <span>{children}</span>
     </a>
   );
 }
