@@ -1,5 +1,5 @@
 import { useNavigate } from "react-router-dom";
-import ProfileAvatar from "../components/ProfileAvatar";
+import CleanAvatar from "../components/CleanAvatar";
 
 export default function Home() {
   const nav = useNavigate();
@@ -18,7 +18,7 @@ export default function Home() {
     <main className="container-nwc py-12 flex flex-col items-center text-center gap-10">
       {/* Hero / Profile section */}
       <section className="flex flex-col items-center gap-6">
-        <ProfileAvatar size={128} />
+        <CleanAvatar size={128} />
         <h1 className="text-3xl md:text-4xl font-semibold tracking-tight">Eugene McGrath</h1>
 
         <div className="text-neutral-300 max-w-prose space-y-3">

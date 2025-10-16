@@ -15,3 +15,22 @@ html, body, #root {
   background-color: #0b0c10; 
 }
 
+/* Kill any accidental ring/arc drawn around the avatar */
+.nwc-avatar > svg,
+.nwc-avatar svg,
+.nwc-avatar::before,
+.nwc-avatar::after {
+  display: none !important;
+}
+
+/* Also ensure no Tailwind ring utilities leak in */
+.nwc-avatar *,
+.nwc-avatar img {
+  --tw-ring-offset-width: 0 !important;
+  --tw-ring-inset: initial !important;
+  --tw-ring-color: transparent !important;
+  --tw-ring-offset-color: transparent !important;
+  box-shadow: var(--tw-shadow) !important; /* keep your drop shadow only */
+  outline: 0 !important;
+  border: 0 !important;
+}

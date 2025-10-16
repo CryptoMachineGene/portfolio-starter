@@ -1,4 +1,4 @@
-import ProfileAvatar from "../components/ProfileAvatar";
+import ProfileAvatar from "../components/CleanAvatar";
 
 export default function Founders() {
   return (

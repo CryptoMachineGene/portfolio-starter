@@ -1,9 +1,22 @@
-import { Outlet, useLocation } from 'react-router-dom'
-import SiteFooter from './components/SiteFooter'
+import { Outlet, useLocation } from "react-router-dom";
+import { useEffect, useMemo } from "react";
+import SiteFooter from "./components/SiteFooter";
 
 export default function App() {
-  const { pathname } = useLocation()
-  const isResume = pathname === '/' || pathname === '/resume'   // <— include “/”
+  const { pathname } = useLocation();
+
+  // Normalize pathname to avoid trailing slash mismatches ("/resume/")
+  const normalizedPath = useMemo(
+    () => pathname.replace(/\/+$/, "") || "/",
+    [pathname]
+  );
+
+  // Scroll to top on route change (nice for GH Pages + hash router)
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "instant" as ScrollBehavior });
+  }, [normalizedPath]);
+
+  const isResume = normalizedPath === "/" || normalizedPath === "/resume";
 
   return isResume ? (
     <div className="min-h-screen flex flex-col bg-[#0b0c10]">
@@ -19,5 +32,5 @@ export default function App() {
       </main>
       <SiteFooter />
     </div>
-  )
+  );
 }

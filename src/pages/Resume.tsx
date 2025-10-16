@@ -293,12 +293,7 @@ export default function Resume() {
             </div>
           </div>
         </section>
-      </main>
-
-      {/* Footer */}
-      <footer className="container-nwc py-8 text-neutral-400">
-        <Link to="/resume" className="underline">← Back to Home</Link>
-      </footer>
+      </main>      
     </div>  
   );
 }

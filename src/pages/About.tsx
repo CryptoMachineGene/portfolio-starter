@@ -1,4 +1,4 @@
-import ProfileAvatar from "../components/ProfileAvatar";
+import ProfileAvatar from "../components/CleanAvatar";
 import { Link } from "react-router-dom";
 
 export default function About() {
