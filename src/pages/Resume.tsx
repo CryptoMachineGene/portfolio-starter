@@ -65,8 +65,7 @@ export default function Resume() {
                   width={96}
                   height={96}
                   decoding="async"
-                />
-                <img className="ring" src={`${base}img/Ring.svg`} alt="" aria-hidden="true" />
+                />                
               </div>
               <ul className="flex-list list-items-circle">
                 <li>
