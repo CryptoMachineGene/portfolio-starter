@@ -1,4 +1,6 @@
-type Props = { compact?: boolean; bgClass?: string; borderClass?: string }
+import { Link } from "react-router-dom";
+
+type Props = { compact?: boolean; bgClass?: string; borderClass?: string };
 
 export default function SiteFooter({
   compact = false,
@@ -9,7 +11,13 @@ export default function SiteFooter({
     <footer className={`${compact ? "mt-0" : "mt-16"} ${borderClass} ${bgClass} text-gray-400`}>
       <div className="container-nwc py-6 text-xs flex flex-col gap-2">
         <p>© {new Date().getFullYear()} Eugene McGrath · Built with React + Tailwind</p>
-        <a href="/" className="text-sm text-gray-200 hover:underline">← Back to Home</a>
+
+        <Link
+          to="/"
+          className="text-sm text-gray-200 hover:text-white transition-colors duration-200"
+        >
+          ← Back to Home
+        </Link>
       </div>
     </footer>
   );
