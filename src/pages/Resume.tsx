@@ -4,6 +4,7 @@ import { PROJECTS } from "../data/projects";
 import RepoButton from "../components/RepoButton";
 import SiteButton from "../components/SiteButton";
 import EmailButtons from "../components/EmailButtons";
+import EmailButtonsIcon from "../components/EmailButtonsIcon";
 
 export default function Resume() {
   const base = import.meta.env.BASE_URL; // e.g. "/portfolio-starter/"
@@ -148,8 +149,8 @@ export default function Resume() {
             <ul className="achievements">
               <li>🏆 Dapp University Blockchain Developer Mentorship</li>
               <li>🏆 EatTheBlocks Certified Web3 Developer</li>
-            </ul>
-            <EmailButtons className="pt-2" primary="gmail" />
+            </ul>            
+            <EmailButtonsIcon className="pt-2" primary="gmail" />            
           </div>
         </section>
 
