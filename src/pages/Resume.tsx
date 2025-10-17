@@ -1,5 +1,4 @@
-import { Link } from "react-router-dom";
-import { useEffect } from "react";  
+import { useEffect } from "react";
 import "../styles/resume.css";
 import { PROJECTS } from "../data/projects";
 import RepoButton from "../components/RepoButton";
@@ -8,9 +7,9 @@ import SiteButton from "../components/SiteButton";
 export default function Resume() {
   const base = import.meta.env.BASE_URL; // e.g. "/portfolio-starter/"
 
-  const proofmint = PROJECTS.find(p => p.key === "proofmint");
-  const sakura    = PROJECTS.find(p => p.key === "sakura");
-  const solana    = PROJECTS.find(p => p.key === "solana-hello");
+  const proofmint = PROJECTS.find((p) => p.key === "proofmint");
+  const sakura = PROJECTS.find((p) => p.key === "sakura");
+  const solana = PROJECTS.find((p) => p.key === "solana-hello");
 
   if (!proofmint || !sakura || !solana) {
     return (
@@ -52,11 +51,12 @@ export default function Resume() {
             backgroundImage: `url(${base}img/Background.png)`,
             backgroundRepeat: "no-repeat",
             backgroundSize: "cover",
+            backgroundPosition: "center top",
           }}
         >
+          {/* content sits above overlay */}
           <div className="hero-inner relative z-10">
             <div className="header-links flex-start">
-              {/* Use your real avatar here (keeps the ring overlay) */}
               <div className="profile-container">
                 <img
                   className="profile"
@@ -65,27 +65,51 @@ export default function Resume() {
                   width={96}
                   height={96}
                   decoding="async"
-                />                
+                />
               </div>
               <ul className="flex-list list-items-circle">
                 <li>
-                  <a href="https://www.linkedin.com/in/eugene-mcgrath-550b4897/" target="_blank" rel="noreferrer noopener" aria-label="LinkedIn">
+                  <a
+                    href="https://www.linkedin.com/in/eugene-mcgrath-550b4897/"
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    aria-label="LinkedIn"
+                  >
                     <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true">
-                      <path fill="currentColor" d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-11.5 6H5.5v11h2V9M6.5 5.75A1.25 1.25 0 1 0 6.5 8.25A1.25 1.25 0 0 0 6.5 5.75M20 14.5c0-3.04-1.62-4.5-3.78-4.5c-1.74 0-2.52.96-2.96 1.63V9H11v11h2.26v-5.35c0-1.41.27-2.77 2.01-2.77c1.71 0 1.73 1.6 1.73 2.86V20H20v-5.5Z"/>
+                      <path
+                        fill="currentColor"
+                        d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-11.5 6H5.5v11h2V9M6.5 5.75A1.25 1.25 0 1 0 6.5 8.25A1.25 1.25 0 0 0 6.5 5.75M20 14.5c0-3.04-1.62-4.5-3.78-4.5c-1.74 0-2.52.96-2.96 1.63V9H11v11h2.26v-5.35c0-1.41.27-2.77 2.01-2.77c1.71 0 1.73 1.6 1.73 2.86V20H20v-5.5Z"
+                      />
                     </svg>
                   </a>
                 </li>
                 <li>
-                  <a href="https://github.com/CryptoMachineGene" target="_blank" rel="noreferrer noopener" aria-label="GitHub">
+                  <a
+                    href="https://github.com/CryptoMachineGene"
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    aria-label="GitHub"
+                  >
                     <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true">
-                      <path fill="currentColor" d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.18-3.37-1.18c-.46-1.17-1.12-1.48-1.12-1.48c-.91-.62.07-.61.07-.61c1 .07 1.53 1.04 1.53 1.04c.9 1.53 2.36 1.09 2.94.83c.09-.66.35-1.1.63-1.35c-2.22-.25-4.55-1.11-4.55-4.95c0-1.09.39-1.98 1.03-2.68c-.1-.25-.45-1.27.1-2.65c0 0 .84-.27 2.75 1.02A9.56 9.56 0 0 1 12 6.8c.85 0 1.7.11 2.5.33c1.9-1.29 2.74-1.02 2.74-1.02c.55 1.38.2 2.4.1 2.65c.64.7 1.03 1.59 1.03 2.68c0 3.85-2.34 4.7-4.57 4.95c.36.31.68.92.68 1.86v2.76c0 .27.18.58.69.48A10 10 0 0 0 12 2Z"/>
+                      <path
+                        fill="currentColor"
+                        d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.18-3.37-1.18c-.46-1.17-1.12-1.48-1.12-1.48c-.91-.62.07-.61.07-.61c1 .07 1.53 1.04 1.53 1.04c.9 1.53 2.36 1.09 2.94.83c.09-.66.35-1.1.63-1.35c-2.22-.25-4.55-1.11-4.55-4.95c0-1.09.39-1.98 1.03-2.68c-.1-.25-.45-1.27.1-2.65c0 0 .84-.27 2.75 1.02A9.56 9.56 0 0 1 12 6.8c.85 0 1.7.11 2.5.33c1.9-1.29 2.74-1.02 2.74-1.02c.55 1.38.2 2.4.1 2.65c.64.7 1.03 1.59 1.03 2.68c0 3.85-2.34 4.7-4.57 4.95c.36 .31 .68 .92 .68 1.86v2.76c0 .27 .18 .58 .69 .48A10 10 0 0 0 12 2Z"
+                      />
                     </svg>
                   </a>
                 </li>
                 <li>
-                  <a href="https://x.com/CryptoMachineG" target="_blank" rel="noreferrer noopener" aria-label="X / Twitter">
+                  <a
+                    href="https://x.com/CryptoMachineG"
+                    target="_blank"
+                    rel="noreferrer noopener"
+                    aria-label="X / Twitter"
+                  >
                     <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true">
-                      <path fill="currentColor" d="M17.53 3H20l-5.5 6.29L21 21h-5.5l-4.3-5.61L5.96 21H4l6-6.86L3 3h5.6l3.9 5.23L17.53 3Zm-1.93 16h1.53L8.53 5H7l8.6 14Z"/>
+                      <path
+                        fill="currentColor"
+                        d="M17.53 3H20l-5.5 6.29L21 21h-5.5l-4.3-5.61L5.96 21H4l6-6.86L3 3h5.6l3.9 5.23L17.53 3Zm-1.93 16h1.53L8.53 5H7l8.6 14Z"
+                      />
                     </svg>
                   </a>
                 </li>
@@ -95,9 +119,9 @@ export default function Resume() {
             {/* Clean, simple title */}
             <h1>Eugene McGrath</h1>
           </div>
+
           {/* Fade overlay on top of background, under content */}
           <div className="pointer-events-none absolute inset-0 z-0 bg-gradient-to-b from-transparent via-transparent to-[#060003]" />
-         </header>
         </header>
       </div>
 
@@ -108,7 +132,7 @@ export default function Resume() {
           className="section about"
           style={{ backgroundImage: `url(${base}img/Vector.png)` }}
         >
-           <div className="section-inner space-y-4 text-[1.05rem] leading-7 reveal">
+          <div className="section-inner space-y-4 text-[1.05rem] leading-7 reveal">
             <h2 className="sr-only">About</h2>
             <p className="text-neutral-200">
               <strong>Blockchain Developer | Smart-Contract Engineer | Web3 Builder</strong>
@@ -146,7 +170,7 @@ export default function Resume() {
               <img
                 loading="lazy"
                 decoding="async"
-                width={640} 
+                width={640}
                 height={360}
                 src={`${base}img/projects/project_1.png`}
                 alt="Proofmint dApp"
@@ -168,7 +192,7 @@ export default function Resume() {
               <img
                 loading="lazy"
                 decoding="async"
-                width={640} 
+                width={640}
                 height={360}
                 src={`${base}img/projects/project_2.png`}
                 alt="Sakura Token"
@@ -190,7 +214,7 @@ export default function Resume() {
               <img
                 loading="lazy"
                 decoding="async"
-                width={640} 
+                width={640}
                 height={360}
                 src={`${base}img/projects/project_3.png`}
                 alt="Solana Hello World"
@@ -296,7 +320,7 @@ export default function Resume() {
             </div>
           </div>
         </section>
-      </main>      
-    </div>  
+      </main>
+    </div>
   );
 }
