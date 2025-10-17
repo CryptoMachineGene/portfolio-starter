@@ -3,6 +3,7 @@ import "../styles/resume.css";
 import { PROJECTS } from "../data/projects";
 import RepoButton from "../components/RepoButton";
 import SiteButton from "../components/SiteButton";
+import EmailButtons from "../components/EmailButtons";
 
 export default function Resume() {
   const base = import.meta.env.BASE_URL; // e.g. "/portfolio-starter/"
@@ -148,17 +149,7 @@ export default function Resume() {
               <li>🏆 Dapp University Blockchain Developer Mentorship</li>
               <li>🏆 EatTheBlocks Certified Web3 Developer</li>
             </ul>
-            <div className="pt-2">
-              <a
-                href={`mailto:gene@newworldcryptos.io?subject=Hello%20Eugene&body=Hi%20Eugene,%0D%0A%0D%0A`}
-                className="inline-flex items-center justify-center rounded-2xl px-4 py-2 text-sm font-medium
-                           border border-[hsl(var(--brand))] bg-transparent text-white
-                           hover:bg-[hsl(var(--brand))] hover:text-black focus:outline-none
-                           focus:ring-2 focus:ring-[hsl(var(--brand))]/70"
-              >
-                Email Me
-              </a>
-            </div>
+            <EmailButtons className="pt-2" primary="gmail" />
           </div>
         </section>
 
