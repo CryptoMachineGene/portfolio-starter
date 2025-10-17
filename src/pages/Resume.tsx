@@ -47,14 +47,14 @@ export default function Resume() {
       <div className="full-bleed">
         <header
           id="top"
-          className="header"
+          className="header relative min-h-[72vh] lg:min-h-[78vh]"
           style={{
             backgroundImage: `url(${base}img/Background.png)`,
             backgroundRepeat: "no-repeat",
             backgroundSize: "cover",
           }}
         >
-          <div className="hero-inner">
+          <div className="hero-inner relative z-10">
             <div className="header-links flex-start">
               {/* Use your real avatar here (keeps the ring overlay) */}
               <div className="profile-container">
@@ -95,6 +95,9 @@ export default function Resume() {
             {/* Clean, simple title */}
             <h1>Eugene McGrath</h1>
           </div>
+          {/* Fade overlay on top of background, under content */}
+          <div className="pointer-events-none absolute inset-0 z-0 bg-gradient-to-b from-transparent via-transparent to-[#060003]" />
+         </header>
         </header>
       </div>
 
