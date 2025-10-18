@@ -67,42 +67,46 @@ export default function Resume() {
           {/* content sits above overlay */}
           <div className="hero-inner relative z-10">
             <div className="header-links flex-start">
-              <div className="profile-container">
-                <img
-                  className="profile"
-                  src={`${base}img/gene-avatar.png`}
-                  alt="Eugene McGrath"
-                  width={96}
-                  height={96}
-                  decoding="async"
-                />
+              {/* Avatar + CTA column (isolated layout) */}
+              <div className="flex items-start gap-4">
+                <div className="profile-container shrink-0">
+                  <img
+                    className="profile"
+                    src={`${base}img/gene-avatar.png`}
+                    alt="Eugene McGrath"
+                    width={96}
+                    height={96}
+                    decoding="async"
+                  />
+                </div>
+
+                <div className="flex flex-col gap-2">
+                  <div className="flex flex-wrap items-center gap-3">
+                    {/* LinkedIn (may require sign-in) */}
+                    <ExternalLink
+                      href={SOCIAL.linkedin}
+                      aria-label="View LinkedIn profile (may require sign-in)"
+                      aria-describedby="li-note"
+                      title="Opens LinkedIn in a new tab (may require sign-in)"
+                      className="inline-flex h-10 items-center rounded-xl border border-amber-400/60 px-4 text-sm hover:bg-amber-400 hover:text-black transition-colors bg-black/20 backdrop-blur-sm"
+                    >
+                      View LinkedIn
+                    </ExternalLink>
+
+                    {/* Email me directly */}
+                    <a
+                      href={SOCIAL.email}
+                      className="inline-flex h-10 items-center rounded-xl border border-zinc-700 px-4 text-sm hover:bg-white hover:text-black transition-colors bg-black/20 backdrop-blur-sm"
+                    >
+                      Email Me
+                    </a>
+                  </div>
+
+                  <p id="li-note" className="text-xs text-neutral-400">
+                    LinkedIn may ask viewers to sign in. If that happens, use Email and I’ll reply quickly.
+                  </p>
+                </div>
               </div>
-
-              {/* CTA row (moved OUT of the circle-list to prevent ugly wrap) */}
-              <div className="mt-2 flex flex-wrap items-center gap-3">
-                {/* LinkedIn (may require sign-in) */}
-                <ExternalLink
-                  href={SOCIAL.linkedin}
-                  aria-label="View LinkedIn profile (may require sign-in)"
-                  aria-describedby="li-note"
-                  title="Opens LinkedIn in a new tab (may require sign-in)"
-                  className="inline-flex h-10 items-center rounded-xl border border-amber-400/60 px-4 text-sm hover:bg-amber-400 hover:text-black transition-colors"
-                >
-                  View LinkedIn
-                </ExternalLink>
-
-                {/* Email me directly */}
-                <a
-                  href={SOCIAL.email}
-                  className="inline-flex h-10 items-center rounded-xl border border-zinc-700 px-4 text-sm hover:bg-white hover:text-black transition-colors"
-                >
-                  Email Me
-                </a>
-              </div>
-
-              <p id="li-note" className="text-xs text-neutral-500 mt-2">
-                Note: LinkedIn sometimes asks viewers to sign in. If that happens, use the Email button above and I’ll reply quickly.
-              </p>
 
               {/* Icon list ONLY (keeps your circular UI tidy) */}
               <ul className="flex-list list-items-circle mt-3">
@@ -196,12 +200,12 @@ export default function Resume() {
                 Full-stack token crowdsale + NFT receipt dApp (Hardhat, Solidity, React).
               </p>
 
-              <div className={`card-buttons ${!proofmint.live ? "single" : ""} mt-auto pt-2 pb-1 flex flex-wrap justify-center gap-2 sm:gap-3`}>
-                {/* Demo (internal) */}
+              <div className={`card-buttons ${!proofmint.live ? "single" : ""} mt-auto pt-3 pb-4 flex flex-wrap justify-center gap-2 sm:gap-3`}>
                 <Link
                   to="/proofmint-demo"
                   aria-label="Watch Proofmint demo"
-                  className="min-w-[120px] inline-flex h-10 items-center justify-center rounded-2xl border border-yellow-400/60 text-yellow-200 hover:bg-yellow-400 hover:text-black transition"
+                  className="min-w-[120px] h-10 shrink-0 inline-flex items-center justify-center rounded-2xl
+                             border border-yellow-400/60 text-yellow-200 hover:bg-yellow-400 hover:text-black transition"
                 >
                   ▶︎ Demo
                 </Link>
@@ -210,17 +214,17 @@ export default function Resume() {
                   <SiteButton
                     to={proofmint.live}
                     aria-label="Open Proofmint live site"
-                    className="min-w-[120px] h-10 justify-center"
+                    className="min-w-[120px] h-10 shrink-0 justify-center"
                   />
                 )}
 
                 <RepoButton
                   to={proofmint.repo}
                   aria-label="Open Proofmint GitHub repository"
-                  className="min-w-[120px] h-10 justify-center"
+                  className="min-w-[120px] h-10 shrink-0 justify-center"
                 />
+              </div>
             </div>
-          </div>
 
             {/* Sakura */}
             <div className="card reveal flex flex-col bg-[#0b0a0d] rounded-2xl p-5 shadow-md transition hover:shadow-lg overflow-hidden" data-delay="0">
@@ -238,18 +242,18 @@ export default function Resume() {
                 Custom ERC-20 token with delegated transfer tests (Solidity + Hardhat).
               </p>
 
-              <div className={`card-buttons ${!sakura.live ? "single" : ""} mt-auto pt-2 pb-1 flex flex-wrap justify-center gap-2 sm:gap-3`}>
+              <div className={`card-buttons ${!sakura.live ? "single" : ""} mt-auto pt-3 pb-4 flex flex-wrap justify-center gap-2 sm:gap-3`}>
                 {sakura.live && (
                   <SiteButton
                     to={sakura.live}
                     aria-label="Open Sakura live site"
-                    className="min-w-[120px] h-10 justify-center"
+                    className="min-w-[120px] h-10 shrink-0 justify-center"
                   />
                 )}
                 <RepoButton
                   to={sakura.repo}
                   aria-label="Open Sakura GitHub repository"
-                  className="min-w-[120px] h-10 justify-center"
+                  className="min-w-[120px] h-10 shrink-0 justify-center"
                 />
               </div>
             </div>
@@ -270,18 +274,18 @@ export default function Resume() {
                 Anchor + Rust Hello World smart contract verified on localnet.
               </p>
 
-              <div className={`card-buttons ${!solana.live ? "single" : ""} mt-auto pt-2 pb-1 flex flex-wrap justify-center gap-2 sm:gap-3`}>
+              <div className={`card-buttons ${!solana.live ? "single" : ""} mt-auto pt-3 pb-4 flex flex-wrap justify-center gap-2 sm:gap-3`}>
                 {solana.live && (
                   <SiteButton
                     to={solana.live}
                     aria-label="Open Solana live site"
-                    className="min-w-[120px] h-10 justify-center"
+                    className="min-w-[120px] h-10 shrink-0 justify-center"
                   />
                 )}
                 <RepoButton
                   to={solana.repo}
                   aria-label="Open Solana GitHub repository"
-                  className="min-w-[120px] h-10 justify-center"
+                  className="min-w-[120px] h-10 shrink-0 justify-center"
                 />
               </div>
             </div>
