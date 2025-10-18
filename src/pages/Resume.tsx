@@ -102,7 +102,7 @@ export default function Resume() {
                     </a>
                   </div>
 
-                  <p id="li-note" className="text-xs text-neutral-400">
+                  <p id="li-note" className="text-xs text-black/80 drop-shadow-sm">
                     LinkedIn may ask viewers to sign in. If that happens, use Email and I’ll reply quickly.
                   </p>
                 </div>
@@ -193,10 +193,10 @@ export default function Resume() {
                 height={360}
                 src={proofmintCover}
                 alt="Proofmint cover"
-                className="rounded-xl aspect-[16/9] w-full h-auto transition duration-300 hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(0,0,0,0.35)]"
+                className="rounded-xl aspect-[16/9] w-full h-auto transition-transform duration-300 hover:-translate-y-0.5"
               />
-              <h3 className="card-title text-yellow-100 drop-shadow-[0_1px_3px_rgba(0,0,0,0.9)] mt-3">Proofmint</h3>
-              <p className="card-description">
+              <h3 className="card-title mt-3 text-yellow-100 drop-shadow-[0_1px_3px_rgba(0,0,0,0.9)]">Proofmint</h3>
+              <p className="card-description mb-2">
                 Full-stack token crowdsale + NFT receipt dApp (Hardhat, Solidity, React).
               </p>
 
