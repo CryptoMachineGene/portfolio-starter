@@ -224,9 +224,19 @@ export default function Resume() {
 
             {/* Sakura */}
             <div className="card reveal flex flex-col bg-[#0b0a0d] rounded-2xl p-5 shadow-md transition hover:shadow-lg overflow-hidden" data-delay="0">
-              <img ... />
+              <img
+                loading="lazy"
+                decoding="async"
+                width={640}
+                height={360}
+                src={sakuraCover}
+                alt="Sakura Token cover"
+                className="rounded-xl aspect-[16/9] w-full h-auto transition-transform duration-300 hover:-translate-y-0.5"
+              />
               <h3 className="card-title mt-3">Sakura Token (SKR)</h3>
-              <p className="card-description">Custom ERC-20 token with delegated transfer tests (Solidity + Hardhat).</p>
+              <p className="card-description">
+                Custom ERC-20 token with delegated transfer tests (Solidity + Hardhat).
+              </p>
 
               <div className={`card-buttons ${!sakura.live ? "single" : ""} mt-auto pt-2 pb-1 flex flex-wrap justify-center gap-2 sm:gap-3`}>
                 {sakura.live && (
@@ -246,9 +256,19 @@ export default function Resume() {
 
             {/* Solana Hello */}
             <div className="card reveal flex flex-col bg-[#0b0a0d] rounded-2xl p-5 shadow-md transition hover:shadow-lg overflow-hidden" data-delay="0">
-              <img ... />
+              <img
+                loading="lazy"
+                decoding="async"
+                width={640}
+                height={360}
+                src={solanaCover}
+                alt="Solana Hello World cover"
+                className="rounded-xl aspect-[16/9] w-full h-auto transition-transform duration-300 hover:-translate-y-0.5"
+              />
               <h3 className="card-title mt-3">Solana Hello World</h3>
-              <p className="card-description">Anchor + Rust Hello World smart contract verified on localnet.</p>
+              <p className="card-description">
+                Anchor + Rust Hello World smart contract verified on localnet.
+              </p>
 
               <div className={`card-buttons ${!solana.live ? "single" : ""} mt-auto pt-2 pb-1 flex flex-wrap justify-center gap-2 sm:gap-3`}>
                 {solana.live && (
