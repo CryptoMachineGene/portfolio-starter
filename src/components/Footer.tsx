@@ -1,10 +1,29 @@
 import { Link } from "react-router-dom";
-import ExternalLink from "./ExternalLink"; // or swap to <a> if you didn't add it
 
-export default function Footer() {
+// If you prefer, keep using your ExternalLink component:
+import ExternalLink from "./ExternalLink";
+
+type Props = {
+  compact?: boolean;              // tighter vertical padding (good for Resume)
+  bgClass?: string;               // override background (e.g., "bg-[#0b0c10]")
+  borderClass?: string;           // override border (e.g., "border-t border-gray-800")
+};
+
+export default function Footer({ compact, bgClass, borderClass }: Props) {
+  const wrapper = [
+    "mt-16",                       // keep your top margin
+    borderClass ?? "border-t border-zinc-800",
+    bgClass ?? "",                 // default no extra bg (parent handles it)
+  ].join(" ");
+
   return (
-    <footer className="mt-16 border-t border-zinc-800">
-      <div className="container-nwc py-8 flex flex-col md:flex-row gap-6 md:items-center md:justify-between">
+    <footer className={wrapper}>
+      <div
+        className={
+          `container-nwc ${compact ? "py-4" : "py-8"} ` +
+          "flex flex-col md:flex-row gap-6 md:items-center md:justify-between"
+        }
+      >
         {/* Brand + tiny nav */}
         <div className="space-y-1">
           <p className="text-sm text-neutral-400">

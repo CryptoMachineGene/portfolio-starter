@@ -1,6 +1,6 @@
 import { Outlet, useLocation } from "react-router-dom";
 import { useEffect, useMemo } from "react";
-import SiteFooter from "./components/Footer";
+import Footer from "./components/Footer";
 import SiteHeader from "./components/Header"; 
 
 export default function App() {
@@ -27,7 +27,7 @@ export default function App() {
         <main className="flex-1 bg-[#0b0c10]">
           <Outlet />
         </main>
-        <SiteFooter compact bgClass="bg-[#0b0c10]" borderClass="border-t border-gray-800" />
+        <Footer compact bgClass="bg-[#0b0c10]" borderClass="border-t border-gray-800" />
       </div>
     );
   }
@@ -39,7 +39,7 @@ export default function App() {
       <main className="flex-1">
         <Outlet />
       </main>
-      <SiteFooter />
+      <Footer />
     </div>
   );
 }
