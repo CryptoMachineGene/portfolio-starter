@@ -8,8 +8,13 @@ import EmailButtonsIcon from "../components/EmailButtonsIcon";
 import proofmintCover from "../assets/projects/proofmint-cover.svg";
 import sakuraCover from "../assets/projects/sakura-cover.svg";
 import solanaCover from "../assets/projects/solana-hello-cover.svg";
+import ExternalLink from "../components/ExternalLink";
+import { SOCIAL } from "../data/social";
+import { usePageTitle } from "../hooks/usePageTitle";
 
 export default function Resume() {
+  usePageTitle("Eugene McGrath — Resume");
+
   const base = import.meta.env.BASE_URL; // e.g. "/portfolio-starter/"
 
   const proofmint = PROJECTS.find((p) => p.key === "proofmint");
@@ -74,26 +79,48 @@ export default function Resume() {
               </div>
               <ul className="flex-list list-items-circle">
                 <li>
-                  <a
-                    href="https://www.linkedin.com/in/eugene-mcgrath-550b4897/"
-                    target="_blank"
-                    rel="noreferrer noopener"
-                    aria-label="LinkedIn"                    
-                  >
-                    <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true">
-                      <path
-                        fill="currentColor"
-                        d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-11.5 6H5.5v11h2V9M6.5 5.75A1.25 1.25 0 1 0 6.5 8.25A1.25 1.25 0 0 0 6.5 5.75M20 14.5c0-3.04-1.62-4.5-3.78-4.5c-1.74 0-2.52.96-2.96 1.63V9H11v11h2.26v-5.35c0-1.41.27-2.77 2.01-2.77c1.71 0 1.73 1.6 1.73 2.86V20H20v-5.5Z"
-                      />
-                    </svg>
-                  </a>
+                  <div className="flex flex-wrap gap-3">
+                    {/* LinkedIn (may require sign-in) */}
+                    <ExternalLink
+                      href={SOCIAL.linkedin}
+                      aria-label="View LinkedIn profile (may require sign-in)"
+                      aria-describedby="li-note"
+                      title="Opens LinkedIn in a new tab (may require sign-in)"
+                      className="inline-flex h-10 items-center rounded-xl border border-amber-400/60 px-4 text-sm hover:bg-amber-400 hover:text-black transition-colors"
+                    >
+                      View LinkedIn
+                    </ExternalLink>
+
+                    {/* Email me directly */}
+                    <a
+                      href={SOCIAL.email}
+                      className="inline-flex h-10 items-center rounded-xl border border-zinc-700 px-4 text-sm hover:bg-white hover:text-black transition-colors"
+                    >
+                      Email Me
+                    </a>
+
+                    {/* Resume PDF (if you have one) */}
+                    {/* <a
+                      href="/resume/Eugene-McGrath-Resume.pdf"
+                      className="inline-flex h-10 items-center rounded-xl border border-zinc-700 px-4 text-sm hover:bg-white hover:text-black transition-colors"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      Download PDF
+                    </a> */}
+                  </div>
+
+                  <p id="li-note" className="text-xs text-neutral-500 mt-2">
+                    Note: LinkedIn sometimes asks viewers to sign in. If that happens, use the Email button above and I’ll reply quickly.
+                  </p>
                 </li>
                 <li>
                   <a
+                    title="GitHub: CryptoMachineGene"
                     href="https://github.com/CryptoMachineGene"
                     target="_blank"
                     rel="noreferrer noopener"
-                    aria-label="GitHub"                    
+                    aria-label="GitHub"
                   >
                     <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true">
                       <path
@@ -105,10 +132,11 @@ export default function Resume() {
                 </li>
                 <li>
                   <a
+                    title="X (Twitter): @CryptoMachineG"
                     href="https://x.com/CryptoMachineG"
                     target="_blank"
                     rel="noreferrer noopener"
-                    aria-label="X / Twitter"                    
+                    aria-label="X / Twitter"
                   >
                     <svg width="20" height="20" viewBox="0 0 24 24" aria-hidden="true">
                       <path
@@ -152,22 +180,21 @@ export default function Resume() {
             <ul className="achievements">
               <li>🏆 Dapp University Blockchain Developer Mentorship</li>
               <li>🏆 EatTheBlocks Certified Web3 Developer</li>
-            </ul>            
-            <EmailButtonsIcon className="pt-2" primary="gmail" />            
+            </ul>
+            <EmailButtonsIcon className="pt-2" primary="gmail" />
           </div>
         </section>
 
         {/* PROJECTS */}
         <section className="section projects">
           <div className="max-w-6xl mx-auto cards flex flex-wrap justify-center items-stretch gap-8">
-
             {/* Proofmint */}
             <div className="card reveal flex flex-col justify-between bg-[#0b0a0d] rounded-2xl p-4 shadow-md transition hover:shadow-lg" data-delay="0">
               <img
                 loading="lazy"
                 decoding="async"
                 width={640}
-                height={360}                
+                height={360}
                 src={proofmintCover}
                 alt="Proofmint cover"
                 className="rounded-xl aspect-[16/9] w-full h-auto transition duration-300 hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(0,0,0,0.35)]"
@@ -176,7 +203,7 @@ export default function Resume() {
               <p className="card-description">
                 Full-stack token crowdsale + NFT receipt dApp (Hardhat, Solidity, React).
               </p>
-              <div className={`card-buttons ${!proofmint.live ? "single" : ""} flex flex-wrap justify-center gap-2 sm:gap-3`}>  
+              <div className={`card-buttons ${!proofmint.live ? "single" : ""} flex flex-wrap justify-center gap-2 sm:gap-3`}>
                 {/* Demo button (internal) */}
                 <Link
                   to="/proofmint-demo"
@@ -207,7 +234,7 @@ export default function Resume() {
                 loading="lazy"
                 decoding="async"
                 width={640}
-                height={360}                
+                height={360}
                 src={sakuraCover}
                 alt="Sakura Token cover"
                 className="rounded-xl aspect-[16/9] w-full h-auto transition-transform duration-300 hover:-translate-y-0.5"
