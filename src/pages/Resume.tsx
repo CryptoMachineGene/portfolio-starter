@@ -77,43 +77,35 @@ export default function Resume() {
                   decoding="async"
                 />
               </div>
-              <ul className="flex-list list-items-circle">
-                <li>
-                  <div className="flex flex-wrap gap-3">
-                    {/* LinkedIn (may require sign-in) */}
-                    <ExternalLink
-                      href={SOCIAL.linkedin}
-                      aria-label="View LinkedIn profile (may require sign-in)"
-                      aria-describedby="li-note"
-                      title="Opens LinkedIn in a new tab (may require sign-in)"
-                      className="inline-flex h-10 items-center rounded-xl border border-amber-400/60 px-4 text-sm hover:bg-amber-400 hover:text-black transition-colors"
-                    >
-                      View LinkedIn
-                    </ExternalLink>
 
-                    {/* Email me directly */}
-                    <a
-                      href={SOCIAL.email}
-                      className="inline-flex h-10 items-center rounded-xl border border-zinc-700 px-4 text-sm hover:bg-white hover:text-black transition-colors"
-                    >
-                      Email Me
-                    </a>
+              {/* CTA row (moved OUT of the circle-list to prevent ugly wrap) */}
+              <div className="mt-2 flex flex-wrap items-center gap-3">
+                {/* LinkedIn (may require sign-in) */}
+                <ExternalLink
+                  href={SOCIAL.linkedin}
+                  aria-label="View LinkedIn profile (may require sign-in)"
+                  aria-describedby="li-note"
+                  title="Opens LinkedIn in a new tab (may require sign-in)"
+                  className="inline-flex h-10 items-center rounded-xl border border-amber-400/60 px-4 text-sm hover:bg-amber-400 hover:text-black transition-colors"
+                >
+                  View LinkedIn
+                </ExternalLink>
 
-                    {/* Resume PDF (if you have one) */}
-                    {/* <a
-                      href="/resume/Eugene-McGrath-Resume.pdf"
-                      className="inline-flex h-10 items-center rounded-xl border border-zinc-700 px-4 text-sm hover:bg-white hover:text-black transition-colors"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      Download PDF
-                    </a> */}
-                  </div>
+                {/* Email me directly */}
+                <a
+                  href={SOCIAL.email}
+                  className="inline-flex h-10 items-center rounded-xl border border-zinc-700 px-4 text-sm hover:bg-white hover:text-black transition-colors"
+                >
+                  Email Me
+                </a>
+              </div>
 
-                  <p id="li-note" className="text-xs text-neutral-500 mt-2">
-                    Note: LinkedIn sometimes asks viewers to sign in. If that happens, use the Email button above and I’ll reply quickly.
-                  </p>
-                </li>
+              <p id="li-note" className="text-xs text-neutral-500 mt-2">
+                Note: LinkedIn sometimes asks viewers to sign in. If that happens, use the Email button above and I’ll reply quickly.
+              </p>
+
+              {/* Icon list ONLY (keeps your circular UI tidy) */}
+              <ul className="flex-list list-items-circle mt-3">
                 <li>
                   <a
                     title="GitHub: CryptoMachineGene"
@@ -189,7 +181,7 @@ export default function Resume() {
         <section className="section projects">
           <div className="max-w-6xl mx-auto cards flex flex-wrap justify-center items-stretch gap-8">
             {/* Proofmint */}
-            <div className="card reveal flex flex-col justify-between bg-[#0b0a0d] rounded-2xl p-4 shadow-md transition hover:shadow-lg" data-delay="0">
+            <div className="card reveal flex flex-col bg-[#0b0a0d] rounded-2xl p-5 shadow-md transition hover:shadow-lg overflow-hidden" data-delay="0">
               <img
                 loading="lazy"
                 decoding="async"
@@ -199,93 +191,77 @@ export default function Resume() {
                 alt="Proofmint cover"
                 className="rounded-xl aspect-[16/9] w-full h-auto transition duration-300 hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(0,0,0,0.35)]"
               />
-              <h3 className="card-title text-yellow-100 drop-shadow-[0_1px_3px_rgba(0,0,0,0.9)]">Proofmint</h3>
+              <h3 className="card-title text-yellow-100 drop-shadow-[0_1px_3px_rgba(0,0,0,0.9)] mt-3">Proofmint</h3>
               <p className="card-description">
                 Full-stack token crowdsale + NFT receipt dApp (Hardhat, Solidity, React).
               </p>
-              <div className={`card-buttons ${!proofmint.live ? "single" : ""} flex flex-wrap justify-center gap-2 sm:gap-3`}>
-                {/* Demo button (internal) */}
+
+              <div className={`card-buttons ${!proofmint.live ? "single" : ""} mt-auto pt-2 pb-1 flex flex-wrap justify-center gap-2 sm:gap-3`}>
+                {/* Demo (internal) */}
                 <Link
                   to="/proofmint-demo"
                   aria-label="Watch Proofmint demo"
-                  className="w-[150px] h-[60px] inline-flex items-center justify-center rounded-2xl
-                             border border-yellow-400/60 text-yellow-200 hover:bg-yellow-400 hover:text-black transition"
+                  className="min-w-[120px] inline-flex h-10 items-center justify-center rounded-2xl border border-yellow-400/60 text-yellow-200 hover:bg-yellow-400 hover:text-black transition"
                 >
                   ▶︎ Demo
                 </Link>
+
                 {proofmint.live && (
                   <SiteButton
                     to={proofmint.live}
                     aria-label="Open Proofmint live site"
-                    className="w-[150px] h-[60px] justify-center"
+                    className="min-w-[120px] h-10 justify-center"
                   />
                 )}
+
                 <RepoButton
                   to={proofmint.repo}
                   aria-label="Open Proofmint GitHub repository"
-                  className="w-[150px] h-[60px] justify-center"
+                  className="min-w-[120px] h-10 justify-center"
                 />
-              </div>
             </div>
+          </div>
 
             {/* Sakura */}
-            <div className="card reveal flex flex-col justify-between bg-[#0b0a0d] rounded-2xl p-4 shadow-md transition hover:shadow-lg" data-delay="0">
-              <img
-                loading="lazy"
-                decoding="async"
-                width={640}
-                height={360}
-                src={sakuraCover}
-                alt="Sakura Token cover"
-                className="rounded-xl aspect-[16/9] w-full h-auto transition-transform duration-300 hover:-translate-y-0.5"
-              />
-              <h3 className="card-title">Sakura Token (SKR)</h3>
-              <p className="card-description">
-                Custom ERC-20 token with delegated transfer tests (Solidity + Hardhat).
-              </p>
-              <div className={`card-buttons ${!sakura.live ? "single" : ""} flex flex-wrap justify-center gap-2 sm:gap-3`}>
+            <div className="card reveal flex flex-col bg-[#0b0a0d] rounded-2xl p-5 shadow-md transition hover:shadow-lg overflow-hidden" data-delay="0">
+              <img ... />
+              <h3 className="card-title mt-3">Sakura Token (SKR)</h3>
+              <p className="card-description">Custom ERC-20 token with delegated transfer tests (Solidity + Hardhat).</p>
+
+              <div className={`card-buttons ${!sakura.live ? "single" : ""} mt-auto pt-2 pb-1 flex flex-wrap justify-center gap-2 sm:gap-3`}>
                 {sakura.live && (
                   <SiteButton
                     to={sakura.live}
                     aria-label="Open Sakura live site"
-                    className="w-[150px] h-[60px] justify-center"
+                    className="min-w-[120px] h-10 justify-center"
                   />
                 )}
                 <RepoButton
                   to={sakura.repo}
                   aria-label="Open Sakura GitHub repository"
-                  className="w-[150px] h-[60px] justify-center"
+                  className="min-w-[120px] h-10 justify-center"
                 />
               </div>
             </div>
 
             {/* Solana Hello */}
-            <div className="card reveal flex flex-col justify-between bg-[#0b0a0d] rounded-2xl p-4 shadow-md transition hover:shadow-lg" data-delay="0">
-              <img
-                loading="lazy"
-                decoding="async"
-                width={640}
-                height={360}
-                src={solanaCover}
-                alt="Solana Hello World cover"
-                className="rounded-xl aspect-[16/9] w-full h-auto transition-transform duration-300 hover:-translate-y-0.5"
-              />
-              <h3 className="card-title">Solana Hello World</h3>
-              <p className="card-description">
-                Anchor + Rust Hello World smart contract verified on localnet.
-              </p>
-              <div className={`card-buttons ${!solana.live ? "single" : ""} flex flex-wrap justify-center gap-2 sm:gap-3`}>
+            <div className="card reveal flex flex-col bg-[#0b0a0d] rounded-2xl p-5 shadow-md transition hover:shadow-lg overflow-hidden" data-delay="0">
+              <img ... />
+              <h3 className="card-title mt-3">Solana Hello World</h3>
+              <p className="card-description">Anchor + Rust Hello World smart contract verified on localnet.</p>
+
+              <div className={`card-buttons ${!solana.live ? "single" : ""} mt-auto pt-2 pb-1 flex flex-wrap justify-center gap-2 sm:gap-3`}>
                 {solana.live && (
                   <SiteButton
                     to={solana.live}
                     aria-label="Open Solana live site"
-                    className="w-[150px] h-[60px] justify-center"
+                    className="min-w-[120px] h-10 justify-center"
                   />
                 )}
                 <RepoButton
                   to={solana.repo}
                   aria-label="Open Solana GitHub repository"
-                  className="w-[150px] h-[60px] justify-center"
+                  className="min-w-[120px] h-10 justify-center"
                 />
               </div>
             </div>
