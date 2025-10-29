@@ -168,7 +168,7 @@
 .resume .projects .projects-link { color: var(--white); margin-bottom: 30px; opacity: 0.7; transition: 250ms; }
 .resume .projects .projects-link:hover { opacity: 1; }
 .resume .projects .cards { justify-content: space-evenly; flex-wrap: wrap; }
-.resume .projects .card { border: 1px solid var(--gray); height: 510px; max-width: 390px; padding: 30px; margin: 20px auto; }
+.resume .projects .card { border: 1px solid var(--gray); min-height: 510px; max-width: 390px; padding: 30px; margin: 20px auto; }
 .resume .projects .card img { width: 100%; max-width: 325px; height: auto; margin: 0 auto 16px; }
 .resume .projects .card .card-title { font-size: 24px; margin-bottom: 8px; }
 .resume .projects .card .card-description { margin-bottom: 60px; }
