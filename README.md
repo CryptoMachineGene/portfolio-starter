@@ -40,3 +40,4 @@ npm run preview
 - Finalize footer spacing and skills grid alignment  
 - Add short intro in the About section and update profile photo  
 
+
