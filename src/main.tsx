@@ -8,6 +8,7 @@ import App from "./App";
 import Resume from "./pages/Resume";
 import NotFound from "./pages/NotFound";
 import Projects from "./pages/Projects"; // optional if you’ll re-enable Projects soon
+import Demo from "./pages/Demo";
 
 const router = createHashRouter([
   {
@@ -16,6 +17,7 @@ const router = createHashRouter([
     children: [
       { index: true, element: <Resume /> },
       { path: "projects", element: <Projects /> }, // optional now, safe placeholder
+      { path: "demo", element: <Demo /> }, 
       { path: "*", element: <NotFound /> }, // ✅ catch-all for 404s
     ],
   },
