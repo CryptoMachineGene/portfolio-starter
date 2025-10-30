@@ -5,6 +5,7 @@ export type Project = {
   route: string;
   repo: string;
   live?: string;
+  demo?: string;
   featured?: boolean;
 };
 
