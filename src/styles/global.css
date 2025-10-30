@@ -1,5 +1,53 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+/* Continuous looping yellow progress bar */
+.loading-bar {
+  position: relative;
+  width: 100%;
+  height: 4px;
+  background-color: rgba(255, 255, 0, 0.15); /* faint track */
+  overflow: hidden;
+}
 
-/* Add global app-wide styles here if needed */
+.loading-bar::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -40%;
+  width: 40%;
+  height: 100%;
+  background-color: var(--brand-yellow, #facc15);
+  opacity: 0.85;
+  animation: slide 4s linear infinite;
+}
+
+/* Smooth looping motion */
+@keyframes slide {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(250%);
+  }
+}
+
+/* Optional fade-in for the whole bar */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.loading-bar {
+  animation: fadeIn 1.2s ease-in forwards;
+}
+
+@keyframes conveyor {
+  0% {
+    transform: translateX(-40%);
+  }
+  100% {
+    transform: translateX(300%);
+  }
+}
+
+.animate-conveyor {
+  animation: conveyor 6s linear infinite;
+}
