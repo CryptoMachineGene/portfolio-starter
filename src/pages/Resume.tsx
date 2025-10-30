@@ -11,6 +11,8 @@ import solanaCover from "../assets/projects/solana-hello-cover.svg";
 import ExternalLink from "../components/ExternalLink";
 import { SOCIAL } from "../data/social";
 import { usePageTitle } from "../hooks/usePageTitle";
+import "../styles/resume.css";
+import "../styles/global.css";
 
 export default function Resume() {
   usePageTitle("Eugene McGrath — Resume");
