@@ -60,10 +60,9 @@ export default function Resume() {
           id="top"
           className="header relative min-h-[72vh] lg:min-h-[78vh]"
           style={{
-            // backgroundImage: `url(${base}img/Background.png)`,
-            backgroundRepeat: "no-repeat",
-            backgroundSize: "cover",
-            backgroundPosition: "center top",
+            background: "radial-gradient(circle at top left, #7dd3fc, #6366f1)",
+            minHeight: "100vh",
+            color: "#fff",
           }}
         >
           {/* content sits above overlay */}
