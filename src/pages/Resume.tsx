@@ -60,7 +60,7 @@ export default function Resume() {
           id="top"
           className="header relative min-h-[72vh] lg:min-h-[78vh]"
           style={{
-            backgroundImage: `url(${base}img/Background.png)`,
+            // backgroundImage: `url(${base}img/Background.png)`,
             backgroundRepeat: "no-repeat",
             backgroundSize: "cover",
             backgroundPosition: "center top",
