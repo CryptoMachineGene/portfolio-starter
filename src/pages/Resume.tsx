@@ -58,13 +58,7 @@ export default function Resume() {
       <div className="full-bleed">
         <header
           id="top"
-          className="header relative min-h-[72vh] lg:min-h-[78vh]"
-          style={{
-            backgroundImage: "linear-gradient(135deg, #a0e0ff 0%, #d4a1ff 100%)",
-            backgroundRepeat: "no-repeat",
-            backgroundSize: "cover",
-            backgroundPosition: "center top",
-          }}
+          className="header relative min-h-[72vh] lg:min-h-[78vh] bg-gradient-to-br from-sky-200 via-purple-200 to-indigo-300 dark:from-slate-800 dark:via-slate-900 dark:to-gray-800"
         >
           {/* content sits above overlay */}
           <div className="hero-inner relative z-10">
