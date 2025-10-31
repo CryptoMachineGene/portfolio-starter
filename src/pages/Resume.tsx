@@ -60,7 +60,7 @@ export default function Resume() {
           id="top"
           className="header relative min-h-[72vh] lg:min-h-[78vh]"
           style={{
-            backgroundImage: `url(${base}img/Background.png)`,
+            backgroundImage: "linear-gradient(135deg, #a0e0ff 0%, #d4a1ff 100%)",
             backgroundRepeat: "no-repeat",
             backgroundSize: "cover",
             backgroundPosition: "center top",
