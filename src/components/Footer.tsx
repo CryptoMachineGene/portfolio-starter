@@ -1,23 +1,40 @@
 import { Link } from "react-router-dom";
-
-// If you prefer, keep using your ExternalLink component:
+import { motion, useScroll, useTransform } from "framer-motion";
+import { useEffect, useState } from "react";
 import ExternalLink from "./ExternalLink";
 
 type Props = {
-  compact?: boolean;              // tighter vertical padding (good for Resume)
-  bgClass?: string;               // override background (e.g., "bg-[#0b0c10]")
-  borderClass?: string;           // override border (e.g., "border-t border-gray-800")
+  compact?: boolean;
+  bgClass?: string;
+  borderClass?: string;
 };
 
 export default function Footer({ compact, bgClass, borderClass }: Props) {
   const wrapper = [
-    "mt-16",                       // keep your top margin
+    "mt-16",
     borderClass ?? "border-t border-zinc-800",
-    bgClass ?? "",                 // default no extra bg (parent handles it)
+    bgClass ?? "",
   ].join(" ");
 
+  // subtle fade as user scrolls (optional)
+  const { scrollYProgress } = useScroll();
+  const opacity = useTransform(scrollYProgress, [0, 0.9, 1], [1, 0.8, 1]);
+
+  // fade-in on mount
+  const [visible, setVisible] = useState(false);
+  useEffect(() => {
+    const timer = setTimeout(() => setVisible(true), 100);
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
-    <footer className={wrapper}>
+    <motion.footer
+      style={{ opacity }}
+      initial={{ opacity: 0, y: 10 }}
+      animate={visible ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.8, ease: "easeOut" }}
+      className={wrapper}
+    >
       <div
         className={
           `container-nwc ${compact ? "py-4" : "py-8"} ` +
@@ -27,19 +44,26 @@ export default function Footer({ compact, bgClass, borderClass }: Props) {
         {/* Brand + tiny nav */}
         <div className="space-y-1">
           <p className="text-sm text-neutral-400">
-            © {new Date().getFullYear()} <strong>New World Cryptos®</strong>
+            © {new Date().getFullYear()}{" "}
+            <strong className="text-yellow-400">New World Cryptos®</strong>
           </p>
           <nav className="flex gap-4 text-sm">
-            <Link to="/" className="text-neutral-400 hover:text-white">
+            <Link to="/" className="text-neutral-400 hover:text-yellow-300">
               Home
             </Link>
-            <Link to="/nwc" className="text-neutral-400 hover:text-white">
+            <Link to="/nwc" className="text-neutral-400 hover:text-yellow-300">
               New World Cryptos®
             </Link>
-            <Link to="/founders" className="text-neutral-400 hover:text-white">
+            <Link
+              to="/founders"
+              className="text-neutral-400 hover:text-yellow-300"
+            >
               Founders
             </Link>
-            <Link to="/acknowledgments" className="text-neutral-400 hover:text-white">
+            <Link
+              to="/acknowledgments"
+              className="text-neutral-400 hover:text-yellow-300"
+            >
               Acknowledgments
             </Link>
           </nav>
@@ -47,21 +71,29 @@ export default function Footer({ compact, bgClass, borderClass }: Props) {
 
         {/* External references */}
         <div className="text-sm text-neutral-400 flex flex-wrap gap-x-4 gap-y-2">
-          <ExternalLink href="https://newworldcryptos.io/">Journal</ExternalLink>
-          <ExternalLink href="https://newworldcryptos.com/">Community Hub</ExternalLink>
-          <ExternalLink href="https://x.com/NewWorldCryptos">@NewWorldCryptos</ExternalLink>
+          <ExternalLink href="https://newworldcryptos.io/">
+            Journal
+          </ExternalLink>
+          <ExternalLink href="https://newworldcryptos.com/">
+            Community Hub
+          </ExternalLink>
+          <ExternalLink href="https://x.com/NewWorldCryptos">
+            @NewWorldCryptos
+          </ExternalLink>
         </div>
 
-        {/* Back to top (no routing) */}
-        <button
+        {/* Back to top */}
+        <motion.button
           type="button"
           aria-label="Back to top"
           onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
-          className="text-sm text-neutral-400 hover:text-white"
+          whileHover={{ scale: 1.1, color: "#facc15" }}
+          transition={{ type: "spring", stiffness: 200, damping: 15 }}
+          className="text-sm text-neutral-400 hover:text-yellow-300"
         >
           ↑ Back to top
-        </button>
+        </motion.button>
       </div>
-    </footer>
+    </motion.footer>
   );
 }

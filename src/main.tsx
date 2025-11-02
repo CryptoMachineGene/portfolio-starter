@@ -6,9 +6,10 @@ import "./styles/resume.css";
 import "./styles/index.css";
 import App from "./App";
 import Resume from "./pages/Resume";
-import NotFound from "./pages/NotFound";
-import Projects from "./pages/Projects"; // optional if you’ll re-enable Projects soon
+import Projects from "./pages/Projects";
 import Demo from "./pages/Demo";
+import Blog from "./pages/Blog";  // ✅ the page you pasted earlier
+import NotFound from "./pages/NotFound";
 
 const router = createHashRouter([
   {
@@ -16,9 +17,10 @@ const router = createHashRouter([
     element: <App />,
     children: [
       { index: true, element: <Resume /> },
-      { path: "projects", element: <Projects /> }, // optional now, safe placeholder
-      { path: "demo", element: <Demo /> }, 
-      { path: "*", element: <NotFound /> }, // ✅ catch-all for 404s
+      { path: "projects", element: <Projects /> },
+      { path: "demo", element: <Demo /> },
+      { path: "blog", element: <Blog /> },
+      { path: "*", element: <NotFound /> },
     ],
   },
 ]);
