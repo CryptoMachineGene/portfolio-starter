@@ -3,19 +3,25 @@ import proofmintCover from "../assets/projects/proofmint-cover.svg";
 import sakuraCover from "../assets/projects/sakura-cover.svg";
 import solanaCover from "../assets/projects/solana-hello-cover.svg";
 
+type ProjectLinks = {
+  site: string;
+  code: string;
+  demo?: string; // optional, so only Proofmint needs it
+};
+
 export default function Projects() {
-  const proofmint = {
+  const proofmint: ProjectLinks = {
     demo: "https://proofmint-demo.vercel.app",
     site: "https://proofmint-demo.vercel.app",
     code: "https://github.com/CryptoMachineGene/proofmint",
   };
-  
-  const sakura = {
+
+  const sakura: ProjectLinks = {
     site: "https://sakura-ai.vercel.app",
     code: "https://github.com/CryptoMachineGene/sakura-ai",
   };
 
-  const solana = {
+  const solana: ProjectLinks = {
     site: "https://solana-tracker.vercel.app",
     code: "https://github.com/CryptoMachineGene/solana-tracker",
   };
