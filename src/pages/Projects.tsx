@@ -1,116 +1,89 @@
 import React from "react";
+import { useNavigate } from "react-router-dom";
 import proofmintCover from "../assets/projects/proofmint-cover.svg";
 import sakuraCover from "../assets/projects/sakura-cover.svg";
 import solanaCover from "../assets/projects/solana-hello-cover.svg";
 
-type ProjectLinks = {
-  site: string;
-  code: string;
-  demo?: string; // optional, so only Proofmint needs it
-};
-
 export default function Projects() {
-  const proofmint: ProjectLinks = {
-    demo: "https://proofmint-demo.vercel.app",
-    site: "https://proofmint-demo.vercel.app",
-    code: "https://github.com/CryptoMachineGene/proofmint",
-  };
-
-  const sakura: ProjectLinks = {
-    site: "https://sakura-ai.vercel.app",
-    code: "https://github.com/CryptoMachineGene/sakura-ai",
-  };
-
-  const solana: ProjectLinks = {
-    site: "https://solana-tracker.vercel.app",
-    code: "https://github.com/CryptoMachineGene/solana-tracker",
-  };
+  const navigate = useNavigate();
 
   const projects = [
     {
-      title: "Proofmint — Crowdsale + NFT Receipt",
+      title: "Proofmint",
       description:
-        "Full-stack dApp on Sepolia with owner withdraw, optional NFT receipt, and a documented demo flow.",
+        "Web3 proof-of-ownership dApp demonstrating NFT minting and verification with Next.js and Tailwind.",
+      site: "https://cryptomachinegene.github.io/proofmint-project/",
+      demo: "/under-construction", // ✅ Correct path
+      code: "https://github.com/CryptoMachineGene/proofmint-project",
       image: proofmintCover,
-      links: proofmint,
     },
     {
-      title: "Sakura AI — Creative Companion",
+      title: "Sakura Token",
       description:
-        "Conversational AI with character memory and themed animations for natural, long-form exchanges.",
+        "ERC-20 token implementation with a simple frontend for minting and viewing balances on Ethereum testnets.",
+      code: "https://github.com/CryptoMachineGene/sakura",
       image: sakuraCover,
-      links: sakura,
     },
     {
-      title: "Solana Tracker — Wallet Insight Tool",
+      title: "Solana Hello",
       description:
-        "Fetches and visualizes wallet data in real time using Solana JSON-RPC API with clean charts and wallet lookups.",
+        "Minimal Solana program built with the Anchor framework demonstrating initialization and account interaction.",
+      code: "https://github.com/CryptoMachineGene/solana-hello-world",
       image: solanaCover,
-      links: solana,
     },
   ];
 
   return (
     <div className="grid md:grid-cols-3 gap-6">
-      {projects.map((project) => {
-        const hasDemo = !!project.links.demo;
-        const buttonBase =
-          "project-btn flex items-center justify-center text-sm font-medium transition-all duration-200";
-        const buttonWidth = hasDemo ? "w-24" : "w-28";
+      {projects.map((project) => (
+        <div
+          key={project.title}
+          className="card flex flex-col bg-[#0b0a0d] rounded-2xl p-5 shadow-md transition hover:shadow-lg overflow-hidden"
+        >
+          <img
+            src={project.image}
+            alt={`${project.title} cover`}
+            className="rounded-xl aspect-[16/9] w-full h-auto mb-3 transition-transform duration-300 hover:-translate-y-0.5"
+            loading="lazy"
+          />
 
-        return (
-          <div
-            key={project.title}
-            className="card flex flex-col bg-[#0b0a0d] rounded-2xl p-5 shadow-md transition hover:shadow-lg overflow-hidden"
-          >
-            {/* Cover Image */}
-            <img
-              src={project.image}
-              alt={`${project.title} cover`}
-              className="rounded-xl aspect-[16/9] w-full h-auto mb-3 transition-transform duration-300 hover:-translate-y-0.5"
-              loading="lazy"
-            />
+          <h3 className="card-title mt-1 text-yellow-100 drop-shadow-[0_1px_3px_rgba(0,0,0,0.9)]">
+            {project.title}
+          </h3>
+          <p className="card-description mb-2 text-sm text-gray-300">
+            {project.description}
+          </p>
 
-            {/* Title & Description */}
-            <h3 className="card-title mt-1 text-yellow-100 drop-shadow-[0_1px_3px_rgba(0,0,0,0.9)]">
-              {project.title}
-            </h3>
-            <p className="card-description mb-2 text-sm text-gray-300">
-              {project.description}
-            </p>
-
-            {/* Buttons */}
-            <div className="flex justify-center gap-3 mt-4">
-              {hasDemo && (
-                <a
-                  href={project.links.demo}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className={`${buttonBase} ${buttonWidth}`}
-                >
-                  <span className="icon">▶</span> Demo
-                </a>
-              )}
+          <div className="flex justify-center gap-3 mt-4">
+            {project.demo && (
+              <button
+                onClick={() => navigate(project.demo)}
+                className="px-4 py-2 border border-yellow-400 text-yellow-300 rounded-lg hover:bg-yellow-400 hover:text-black transition"
+              >
+                Demo
+              </button>
+            )}
+            {project.site && (
               <a
-                href={project.links.site}
+                href={project.site}
                 target="_blank"
                 rel="noopener noreferrer"
-                className={`${buttonBase} ${buttonWidth}`}
+                className="px-4 py-2 border border-yellow-400 text-yellow-300 rounded-lg hover:bg-yellow-400 hover:text-black transition"
               >
-                <span className="icon">↗</span> Site
+                Site
               </a>
-              <a
-                href={project.links.code}
-                target="_blank"
-                rel="noopener noreferrer"
-                className={`${buttonBase} ${buttonWidth}`}
-              >
-                <span className="icon">💻</span> Code
-              </a>
-            </div>
+            )}
+            <a
+              href={project.code}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-4 py-2 border border-yellow-400 text-yellow-300 rounded-lg hover:bg-yellow-400 hover:text-black transition"
+            >
+              Code
+            </a>
           </div>
-        );
-      })}
+        </div>
+      ))}
     </div>
   );
 }

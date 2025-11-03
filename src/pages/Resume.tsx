@@ -11,8 +11,6 @@ import solanaCover from "../assets/projects/solana-hello-cover.svg";
 import ExternalLink from "../components/ExternalLink";
 import { SOCIAL } from "../data/social";
 import { usePageTitle } from "../hooks/usePageTitle";
-import "../styles/resume.css";
-import "../styles/global.css";
 
 export default function Resume() {
   usePageTitle("Eugene McGrath — Resume");
@@ -60,9 +58,10 @@ export default function Resume() {
           id="top"
           className="header relative min-h-[72vh] lg:min-h-[78vh]"
           style={{
-            background: "radial-gradient(circle at top left, #7dd3fc, #6366f1)",
-            minHeight: "100vh",
-            color: "#fff",
+            backgroundImage: `url(${base}img/Background.png)`,
+            backgroundRepeat: "no-repeat",
+            backgroundSize: "cover",
+            backgroundPosition: "center top",
           }}
         >
           {/* content sits above overlay */}
@@ -103,7 +102,7 @@ export default function Resume() {
                     </a>
                   </div>
 
-                  <p id="li-note" className="text-xs text-black/80 drop-shadow-sm">
+                  <p id="li-note" className="text-xs text-neutral-400">
                     LinkedIn may ask viewers to sign in. If that happens, use Email and I’ll reply quickly.
                   </p>
                 </div>
@@ -194,23 +193,27 @@ export default function Resume() {
                 height={360}
                 src={proofmintCover}
                 alt="Proofmint cover"
-                className="rounded-xl aspect-[16/9] w-full h-auto transition-transform duration-300 hover:-translate-y-0.5"
+                className="rounded-xl aspect-[16/9] w-full h-auto transition duration-300 hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(0,0,0,0.35)]"
               />
-              <h3 className="card-title mt-3 text-yellow-100 drop-shadow-[0_1px_3px_rgba(0,0,0,0.9)]">Proofmint</h3>
-              <p className="card-description mb-2">
+              <h3 className="card-title text-yellow-100 drop-shadow-[0_1px_3px_rgba(0,0,0,0.9)] mt-3">Proofmint</h3>
+              <p className="card-description">
                 Full-stack token crowdsale + NFT receipt dApp (Hardhat, Solidity, React).
               </p>
 
-              <div className={`card-buttons ${!proofmint.live ? "single" : ""} mt-auto pt-3 pb-4 flex flex-wrap justify-center gap-2 sm:gap-3`}>
+              <div
+                className={`card-buttons ${
+                  !proofmint.live ? "single" : ""
+                } mt-auto pt-3 pb-4 flex flex-wrap justify-center gap-2 sm:gap-3`}
+              >
                 <Link
-                  to="/proofmint-demo"
-                  aria-label="Watch Proofmint demo"
-                  className="min-w-[120px] h-10 shrink-0 inline-flex items-center justify-center rounded-2xl
+                  to="/under-construction"
+                  aria-label="Demo coming soon"
+                  className="min-w-[120px] h-10 shrink-0 inline-flex items-center justify-center rounded-2xl 
                              border border-yellow-400/60 text-yellow-200 hover:bg-yellow-400 hover:text-black transition"
                 >
-                  ▶︎ Demo
+                  Demo
                 </Link>
-
+                
                 {proofmint.live && (
                   <SiteButton
                     to={proofmint.live}
@@ -220,7 +223,7 @@ export default function Resume() {
                 )}
 
                 <RepoButton
-                  to={proofmint.repo}
+                  to="https://github.com/CryptoMachineGene/proofmint-project"
                   aria-label="Open Proofmint GitHub repository"
                   className="min-w-[120px] h-10 shrink-0 justify-center"
                 />
