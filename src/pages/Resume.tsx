@@ -13,7 +13,7 @@ import { SOCIAL } from "../data/social";
 import { usePageTitle } from "../hooks/usePageTitle";
 
 export default function Resume() {
-  usePageTitle("Eugene McGrath — Resume");
+  usePageTitle("Eugene McGrath — Portfolio");
 
   const base = import.meta.env.BASE_URL; // e.g. "/portfolio-starter/"
 
