@@ -100,11 +100,7 @@ export default function Resume() {
                     >
                       Email Me
                     </a>
-                  </div>
-
-                  <p id="li-note" className="text-xs text-neutral-400">
-                    LinkedIn may ask viewers to sign in. If that happens, use Email and I’ll reply quickly.
-                  </p>
+                  </div>                  
                 </div>
               </div>
 
