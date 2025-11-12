@@ -5,6 +5,7 @@
   height: 4px;
   background-color: rgba(255, 255, 0, 0.15); /* faint track */
   overflow: hidden;
+  animation: fadeIn 1.4s ease-out forwards; /* smoother fade-in */
 }
 
 .loading-bar::before {
@@ -16,7 +17,7 @@
   height: 100%;
   background-color: var(--brand-yellow, #facc15);
   opacity: 0.85;
-  animation: slide 4s linear infinite;
+  animation: slide 4.5s ease-in-out infinite; /* smoother motion */
 }
 
 /* Smooth looping motion */
@@ -35,10 +36,6 @@
   to { opacity: 1; }
 }
 
-.loading-bar {
-  animation: fadeIn 1.2s ease-in forwards;
-}
-
 @keyframes conveyor {
   0% {
     transform: translateX(-40%);
@@ -49,17 +46,18 @@
 }
 
 .animate-conveyor {
-  animation: conveyor 6s linear infinite;
+  animation: conveyor 7s ease-in-out infinite; /* refined pacing */
 }
 
 /* global.css or index.css */
 button,
 a.rounded-2xl {
-  transition: all 0.25s ease;
+  transition: all 0.3s ease-in-out; /* smoother interaction */
 }
+
 button:hover,
 a.rounded-2xl:hover {
-  box-shadow: 0 0 10px rgba(250, 204, 21, 0.4);
+  box-shadow: 0 0 8px rgba(250, 204, 21, 0.3); /* softened glow */
 }
 
 .card .flex-wrap {
@@ -77,12 +75,12 @@ a.rounded-2xl:hover {
   font-weight: 500;
   color: #facc15;
   text-decoration: none;
-  transition: all 0.25s ease;
+  transition: all 0.3s ease-in-out; /* unified with buttons */
 }
 
 .project-btn:hover {
   background-color: rgba(250, 204, 21, 0.15);
-  box-shadow: 0 0 10px rgba(250, 204, 21, 0.4);
+  box-shadow: 0 0 8px rgba(250, 204, 21, 0.3); /* subtle glow */
 }
 
 .icon {
