@@ -1,43 +1,154 @@
-# Portfolio Starter (React + Vite + TS + Tailwind + Router)
+# Eugene McGrath — Portfolio (React + Vite + Tailwind + Router)
 
-Fast scaffold to push a minimal site live tonight; adapt the DappU template later.
+![React](https://img.shields.io/badge/React-18.0-61DAFB?logo=react&logoColor=white&style=for-the-badge)
+![Vite](https://img.shields.io/badge/Vite-Build-646CFF?logo=vite&logoColor=white&style=for-the-badge)
+![TypeScript](https://img.shields.io/badge/TypeScript-5.x-3178C6?logo=typescript&logoColor=white&style=for-the-badge)
+![TailwindCSS](https://img.shields.io/badge/TailwindCSS-3.x-38BDF8?logo=tailwindcss&logoColor=white&style=for-the-badge)
+![React Router](https://img.shields.io/badge/React_Router-6.x-CA4245?logo=react-router&logoColor=white&style=for-the-badge)
+![Vercel](https://img.shields.io/badge/Deployed_on-Vercel-000000?logo=vercel&logoColor=white&style=for-the-badge)
+![GitHub Pages](https://img.shields.io/badge/Backup-GitHub_Pages-181717?logo=github&logoColor=white&style=for-the-badge)
 
-## Quickstart
+
+This repository is the source code for my personal developer portfolio, built with **React**, **Vite**, **TypeScript**, **Tailwind CSS**, and **React Router**.  
+It serves as a clean, fast-loading hub to showcase my work, skills, and current blockchain development projects.
+
+A short demo video walkthrough of the portfolio will be added soon.
+
+---
+
+## 🚀 Quickstart
 ```bash
-npm i
+npm install
 npm run dev
 ```
 
-## Build & Preview
+📦 Build & Preview
 ```bash
 npm run build
 npm run preview
 ```
 
-## Pages
-- `/` Home
-- `/proofmint`
-- `/projects`
-- `/about`
-- `*` 404
+🌐 Deployment
 
-## Notes
-- Tailwind configured (see `tailwind.config.js` and `src/index.css`).
-- React Router set up in `src/main.tsx` with a simple navbar/footer layout.
-- Clean, minimal styles; add your brand and deploy to Netlify/Vercel.
+This project is deployed in two environments:
 
-## 🚀 v0.2.0 — Resume Landing + Dark Mode Polish (Oct 2025)
+1. Vercel (Primary Deployment)
 
-**Highlights**
-- ✨ Set the Resume page as the default landing route (`/#/`)
-- 🌑 Unified dark background across Resume and footer (no white slab)
-- 🧩 Added complete tech-stack icon grid (React, Solidity, Hardhat, Foundry, Rust, etc.)
-- 🖱️ Added hover tooltips for all stack icons
-- 🧱 Cleaned router and layout structure for GitHub Pages compatibility
+Fastest global deployment with automatic previews and CI/CD:
 
-**Next**
-- Add Resume link to navbar and optional “Home” route  
-- Finalize footer spacing and skills grid alignment  
-- Add short intro in the About section and update profile photo  
+Zero-config React/Vite support
 
+Auto-deployment on push
 
+Production + Preview URLs
+
+2. GitHub Pages (Static Backup Deployment)
+
+Configured using the /portfolio-starter/ base path in vite.config to maintain compatibility.
+```
+export default defineConfig({
+  base: "/portfolio-starter/",
+});
+```
+
+📄 Pages
+
+/ — Home
+
+/resume — Resume (primary landing page)
+
+/projects — Projects overview
+
+/proofmint — Showcase page for my capstone project
+
+/about — Background and purpose
+
+* — Custom 404 page
+
+🧩 Tech Stack
+
+React 18
+
+Vite
+
+TypeScript
+
+Tailwind CSS
+
+React Router
+
+Vercel (primary deployment)
+
+GitHub Pages (backup static deployment)
+
+Additional tools used across my broader project ecosystem:
+
+Solidity
+
+Hardhat
+
+Foundry
+
+Rust
+
+Solana / Anchor
+
+Node.js
+
+Ethers.js / Viem
+
+🗂️ Project Structure
+
+src/main.tsx — Application entry + router
+
+src/App.tsx — Global layout wrapper
+
+src/pages/ — Route views (Home, Resume, Projects, etc.)
+
+src/components/ — Shared UI components
+
+src/styles/ — Tailwind and custom global styles
+
+🎞️ Demo Video (Coming Soon)
+
+A short walkthrough video of the site will be added here soon, demonstrating:
+
+Navigation
+
+Responsiveness
+
+Portfolio structure
+
+Design decisions
+
+Overview of my dev workflow
+
+🛠️ Release Notes
+v0.2.0 — Resume Landing + Dark Mode Polish (Oct 2025)
+
+Highlights
+
+Set Resume as default landing route
+
+Unified dark-mode background across layout
+
+Added full tech-stack icon grid with hover tooltips
+
+Cleaned router + layout for GitHub Pages compatibility
+
+General UI/UX refinements
+
+Next
+
+Add Resume to navbar and optional Home button
+
+Footer spacing and grid alignment
+
+Add short About intro + updated profile photo
+
+📬 Contact
+
+Name: Eugene McGrath
+Email: emcgrath@startmail.com
+
+Location: Duncan, SC (USA)
