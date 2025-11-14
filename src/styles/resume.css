@@ -65,7 +65,7 @@
 /* TYPOGRAPHY */
 .resume h1 { font-weight: 400; font-size: var(--font-96); line-height: 116px; }
 .resume h2 { font-weight: 400; font-size: var(--font-32); line-height: 150%; margin-bottom: 30px; }
-.resume p, .resume a { font-weight: 400; font-size: 18px; line-height: 150%; text-decoration: none; }
+.resume p, .resume a { font-weight: 400; font-size: 17px; line-height: 150%; text-decoration: none; }
 .resume p { opacity: 0.85; }
 
 /* Hero title + subtitle for resume page */
@@ -474,10 +474,13 @@
 
 /* Mobile refinement */
 @media (max-width: 640px) {
-  .header h1 {
-    font-size: clamp(32px, 7vw, 48px);
-    line-height: 1.15;
-  }  
+  .resume .section {
+    padding-block: 20px; /* slightly less padding */
+  }
+
+  .resume .projects .card {
+    margin: 10px 0; /* remove extra space between cards */
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
