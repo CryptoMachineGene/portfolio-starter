@@ -1,53 +1,88 @@
 <!doctype html>
 <html lang="en">
   <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- 🔹 Updated global portfolio metadata -->
-  <meta name="description" content="Portfolio of Eugene McGrath — Quality & Process Specialist, Veteran, and Technical Professional. Showcasing skills in process inspection, technical documentation, and modern web technologies." />
+    <!-- 🔹 Global portfolio metadata -->
+    <title>Eugene McGrath — Web3 / Blockchain Developer Portfolio</title>
+    <meta
+      name="description"
+      content="Portfolio of Eugene McGrath, a Web3 / blockchain developer focused on Solidity, Hardhat, Foundry, and React. Explore smart contract work, Solana programs, and polished dApp frontends."
+    />
+    <meta
+      name="keywords"
+      content="Eugene McGrath, blockchain developer, Web3 developer, Solidity, Hardhat, Foundry, React, TypeScript, smart contracts, dApps, Solana, Anchor"
+    />
 
-  <!-- 🔹 Clearer tab title -->
-  <title>Eugene McGrath | Portfolio</title>
+    <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
 
-  <link rel="icon" href="/favicon.ico" type="image/x-icon">
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap"
-    rel="stylesheet"
-  />
+    <!-- ────────────────────────────────────────────────
+         SOCIAL / SHARING METADATA
+    ────────────────────────────────────────────────── -->
 
-  <!-- ────────────────────────────────────────────────
-   PORTFOLIO SITE — META & SOCIAL TAGS
-  ────────────────────────────────────────────────── -->
-  <meta property="og:title" content="Eugene McGrath — Portfolio" />
-  <meta property="og:description" content="Explore the professional portfolio of Eugene McGrath — blending technical precision, process quality, and modern development." />
-  <meta property="og:type" content="website" />
-  <meta property="og:url" content="https://emcgrath.vercel.app/" />
-  <meta property="og:image" content="https://emcgrath.vercel.app/img/gene-avatar.png" />
-  <meta property="og:site_name" content="Eugene McGrath Portfolio" />
+    <!-- Open Graph (LinkedIn, etc.) -->
+    <meta property="og:type" content="website" />
+    <meta
+      property="og:title"
+      content="Eugene McGrath — Web3 / Blockchain Developer Portfolio"
+    />
+    <meta
+      property="og:description"
+      content="Smart contracts, Solana programs, and React frontends — built, tested, and documented for real-world Web3 work."
+    />
+    <!-- 🔁 UPDATE THIS IF YOUR GH PAGES URL IS DIFFERENT -->
+    <meta
+      property="og:url"
+      content="https://cryptomachinegene.github.io/portfolio-starter/"
+    />
+    <!-- Ideally a 1200x630 preview; for now you can reuse an existing image or add /og-image.png -->
+    <meta
+      property="og:image"
+      content="https://cryptomachinegene.github.io/portfolio-starter/img/gene-avatar.png"
+    />
+    <meta property="og:site_name" content="Eugene McGrath — Web3 Portfolio" />
 
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Eugene McGrath — Portfolio" />
-  <meta name="twitter:description" content="Quality & Process Specialist | Veteran | Technical Professional" />
-  <meta name="twitter:image" content="https://emcgrath.vercel.app/img/gene-avatar.png" />
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta
+      name="twitter:title"
+      content="Eugene McGrath — Web3 / Blockchain Developer Portfolio"
+    />
+    <meta
+      name="twitter:description"
+      content="Web3 developer focused on Solidity, Hardhat, Foundry, and React. Explore Proofmint, Sakura Token, Solana Anchor work, and more."
+    />
+    <meta
+      name="twitter:image"
+      content="https://cryptomachinegene.github.io/portfolio-starter/img/gene-avatar.png"
+    />
+    <!-- Optional: set your handle if you want -->
+    <meta name="twitter:creator" content="@CryptoMachineG" />
 
-  <!-- Fallback for search engines -->
-  <link rel="canonical" href="https://emcgrath.vercel.app/" />
+    <!-- Fallback for search engines -->
+    <link
+      rel="canonical"
+      href="https://cryptomachinegene.github.io/portfolio-starter/"
+    />
 
-  <!-- Preserve your hash redirect for GitHub Pages -->
-  <script>
-    (function () {
-      if (!location.hash && /github\.io$/i.test(location.host)) {
-        location.replace(location.pathname + location.search + "#/");
-      }
-    })();
-  </script>
-</head>
+    <!-- Preserve your hash redirect for GitHub Pages -->
+    <script>
+      (function () {
+        if (!location.hash && /github\.io$/i.test(location.host)) {
+          location.replace(location.pathname + location.search + "#/");
+        }
+      })();
+    </script>
+  </head>
 
-  <body class="bg-gray-50">
+  <body class="bg-black">
     <div id="root"></div>
     <script type="module" src="src/main.tsx"></script>
   </body>

@@ -13,7 +13,8 @@ import { SOCIAL } from "../data/social";
 import { usePageTitle } from "../hooks/usePageTitle";
 
 export default function Resume() {
-  usePageTitle("Eugene McGrath — Portfolio");
+  // Metadata / tab title
+  usePageTitle("Eugene McGrath — Web3 / Blockchain Developer Portfolio");
 
   const base = import.meta.env.BASE_URL; // e.g. "/portfolio-starter/"
 
@@ -40,7 +41,7 @@ export default function Resume() {
         entries.forEach((e) => {
           if (e.isIntersecting) {
             e.target.classList.add("visible");
-            io.unobserve(e.target); // reveal once
+            io.unobserve(e.target);
           }
         });
       },
@@ -64,10 +65,9 @@ export default function Resume() {
             backgroundPosition: "center top",
           }}
         >
-          {/* content sits above overlay */}
           <div className="hero-inner relative z-10">
             <div className="header-links flex-start">
-              {/* Avatar + CTA column (isolated layout) */}
+              {/* Avatar + CTA column */}
               <div className="flex items-start gap-4">
                 <div className="profile-container shrink-0">
                   <img
@@ -82,29 +82,29 @@ export default function Resume() {
 
                 <div className="flex flex-col gap-2">
                   <div className="flex flex-wrap items-center gap-3">
-                    {/* LinkedIn (may require sign-in) */}
+                    {/* LinkedIn */}
                     <ExternalLink
                       href={SOCIAL.linkedin}
                       aria-label="View LinkedIn profile (may require sign-in)"
                       aria-describedby="li-note"
                       title="Opens LinkedIn in a new tab (may require sign-in)"
-                      className="inline-flex h-10 items-center rounded-xl border border-amber-400/60 px-4 text-sm hover:bg-amber-400 hover:text-black transition-colors bg-black/20 backdrop-blur-sm"
+                      className="inline-flex h-10 items-center rounded-xl border border-amber-400/60 px-4 text-sm font-medium bg-black/20 backdrop-blur-sm transition-colors duration-500 ease-out hover:bg-amber-400 hover:text-black"
                     >
                       View LinkedIn
                     </ExternalLink>
 
-                    {/* Email me directly */}
+                    {/* Email */}
                     <a
                       href={SOCIAL.email}
-                      className="inline-flex h-10 items-center rounded-xl border border-zinc-700 px-4 text-sm hover:bg-white hover:text-black transition-colors bg-black/20 backdrop-blur-sm"
+                      className="inline-flex h-10 items-center rounded-xl border border-zinc-700 px-4 text-sm font-medium bg-black/20 backdrop-blur-sm transition-colors duration-500 ease-out hover:bg-white hover:text-black"
                     >
                       Email Me
                     </a>
-                  </div>                  
+                  </div>
                 </div>
               </div>
 
-              {/* Icon list ONLY (keeps your circular UI tidy) */}
+              {/* Icon list */}
               <ul className="flex-list list-items-circle mt-3">
                 <li>
                   <a
@@ -141,11 +141,16 @@ export default function Resume() {
               </ul>
             </div>
 
-            {/* Clean, simple title */}
-            <h1>Eugene McGrath</h1>
+            {/* Title */}
+            <h1 className="hero-title">
+              Eugene McGrath
+              <span className="hero-subtitle">
+                Web3 / Blockchain Developer · Smart Contracts · React
+              </span>
+            </h1>
           </div>
 
-          {/* Fade overlay on top of background, under content */}
+          {/* Gradient overlay */}
           <div className="pointer-events-none absolute inset-0 z-0 bg-gradient-to-b from-transparent via-transparent to-[#060003]" />
         </header>
       </div>
@@ -157,10 +162,10 @@ export default function Resume() {
           className="section about"
           style={{ backgroundImage: `url(${base}img/Vector.png)` }}
         >
-          <div className="section-inner space-y-4 text-[1.05rem] leading-7 reveal">
+          <div className="section-inner space-y-4 text-base leading-relaxed reveal">
             <h2 className="sr-only">About</h2>
-            <p className="text-neutral-200">
-              <strong>Blockchain Developer | Smart-Contract Engineer | Web3 Builder</strong>
+            <p className="text-neutral-200 text-lg font-semibold">
+              Blockchain Developer | Smart-Contract Engineer | Web3 Builder
             </p>
             <p className="text-neutral-300">
               Focused on decentralized systems and real-world utility. I design, deploy, and test
@@ -179,9 +184,12 @@ export default function Resume() {
 
         {/* PROJECTS */}
         <section className="section projects">
-          <div className="max-w-6xl mx-auto cards flex flex-wrap justify-center items-stretch gap-8">
+          <div className="max-w-6xl mx-auto cards flex flex-wrap justify-center items-stretch gap-6">
             {/* Proofmint */}
-            <div className="card reveal flex flex-col bg-[#0b0a0d] rounded-2xl p-5 shadow-md transition hover:shadow-lg overflow-hidden" data-delay="0">
+            <div
+              className="card reveal flex flex-col bg-[#0b0a0d] rounded-2xl p-5 shadow-md transition-transform transition-shadow duration-500 ease-out hover:-translate-y-1 hover:shadow-lg overflow-hidden"
+              data-delay="0"
+            >
               <img
                 loading="lazy"
                 decoding="async"
@@ -189,9 +197,9 @@ export default function Resume() {
                 height={360}
                 src={proofmintCover}
                 alt="Proofmint cover"
-                className="rounded-xl aspect-[16/9] w-full h-auto transition duration-300 hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(0,0,0,0.35)]"
+                className="rounded-xl aspect-[16/9] w-full h-auto transition-transform duration-500 ease-out hover:-translate-y-0.5 hover:shadow-[0_8px_24px_rgba(0,0,0,0.35)]"
               />
-              <h3 className="card-title text-yellow-100 drop-shadow-[0_1px_3px_rgba(0,0,0,0.9)] mt-3">Proofmint</h3>
+              <h3 className="card-title mt-3">Proofmint</h3>
               <p className="card-description">
                 Full-stack token crowdsale + NFT receipt dApp (Hardhat, Solidity, React).
               </p>
@@ -205,11 +213,11 @@ export default function Resume() {
                   to="/under-construction"
                   aria-label="Demo coming soon"
                   className="min-w-[120px] h-10 shrink-0 inline-flex items-center justify-center rounded-2xl 
-                             border border-yellow-400/60 text-yellow-200 hover:bg-yellow-400 hover:text-black transition"
+                             border border-yellow-400/60 text-yellow-200 bg-transparent text-sm font-medium transition-colors duration-500 ease-out hover:bg-yellow-400 hover:text-black"
                 >
                   Demo
                 </Link>
-                
+
                 {proofmint.live && (
                   <SiteButton
                     to={proofmint.live}
@@ -227,7 +235,10 @@ export default function Resume() {
             </div>
 
             {/* Sakura */}
-            <div className="card reveal flex flex-col bg-[#0b0a0d] rounded-2xl p-5 shadow-md transition hover:shadow-lg overflow-hidden" data-delay="0">
+            <div
+              className="card reveal flex flex-col bg-[#0b0a0d] rounded-2xl p-5 shadow-md transition-transform transition-shadow duration-500 ease-out hover:-translate-y-1 hover:shadow-lg overflow-hidden"
+              data-delay="100"
+            >
               <img
                 loading="lazy"
                 decoding="async"
@@ -235,14 +246,18 @@ export default function Resume() {
                 height={360}
                 src={sakuraCover}
                 alt="Sakura Token cover"
-                className="rounded-xl aspect-[16/9] w-full h-auto transition-transform duration-300 hover:-translate-y-0.5"
+                className="rounded-xl aspect-[16/9] w-full h-auto transition-transform duration-500 ease-out hover:-translate-y-0.5"
               />
               <h3 className="card-title mt-3">Sakura Token (SKR)</h3>
               <p className="card-description">
                 Custom ERC-20 token with delegated transfer tests (Solidity + Hardhat).
               </p>
 
-              <div className={`card-buttons ${!sakura.live ? "single" : ""} mt-auto pt-3 pb-4 flex flex-wrap justify-center gap-2 sm:gap-3`}>
+              <div
+                className={`card-buttons ${
+                  !sakura.live ? "single" : ""
+                } mt-auto pt-3 pb-4 flex flex-wrap justify-center gap-2 sm:gap-3`}
+              >
                 {sakura.live && (
                   <SiteButton
                     to={sakura.live}
@@ -259,7 +274,10 @@ export default function Resume() {
             </div>
 
             {/* Solana Hello */}
-            <div className="card reveal flex flex-col bg-[#0b0a0d] rounded-2xl p-5 shadow-md transition hover:shadow-lg overflow-hidden" data-delay="0">
+            <div
+              className="card reveal flex flex-col bg-[#0b0a0d] rounded-2xl p-5 shadow-md transition-transform transition-shadow duration-500 ease-out hover:-translate-y-1 hover:shadow-lg overflow-hidden"
+              data-delay="200"
+            >
               <img
                 loading="lazy"
                 decoding="async"
@@ -267,14 +285,18 @@ export default function Resume() {
                 height={360}
                 src={solanaCover}
                 alt="Solana Hello World cover"
-                className="rounded-xl aspect-[16/9] w-full h-auto transition-transform duration-300 hover:-translate-y-0.5"
+                className="rounded-xl aspect-[16/9] w-full h-auto transition-transform duration-500 ease-out hover:-translate-y-0.5"
               />
               <h3 className="card-title mt-3">Solana Hello World</h3>
               <p className="card-description">
                 Anchor + Rust Hello World smart contract verified on localnet.
               </p>
 
-              <div className={`card-buttons ${!solana.live ? "single" : ""} mt-auto pt-3 pb-4 flex flex-wrap justify-center gap-2 sm:gap-3`}>
+              <div
+                className={`card-buttons ${
+                  !solana.live ? "single" : ""
+                } mt-auto pt-3 pb-4 flex flex-wrap justify-center gap-2 sm:gap-3`}
+              >
                 {solana.live && (
                   <SiteButton
                     to={solana.live}
@@ -298,7 +320,7 @@ export default function Resume() {
           style={{ backgroundImage: `url(${base}img/Vector.png)` }}
         >
           <div className="section-inner reveal" data-delay="100">
-            <h2>Tech Stack</h2>
+            <h2 className="section-title">Tech Stack</h2>
 
             {/* FRONTEND */}
             <div className="tech-category">

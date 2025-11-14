@@ -2,10 +2,6 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  :root {
-  /* amber-ish */
-  --brand: 45 100% 52%;
-  }
 }
 
 .resume {
@@ -71,6 +67,46 @@
 .resume h2 { font-weight: 400; font-size: var(--font-32); line-height: 150%; margin-bottom: 30px; }
 .resume p, .resume a { font-weight: 400; font-size: 18px; line-height: 150%; text-decoration: none; }
 .resume p { opacity: 0.85; }
+
+/* Hero title + subtitle for resume page */
+.resume .hero-title {
+  margin-top: 1.75rem;
+  max-width: 40rem;
+  font-size: clamp(2.25rem, 4vw, 2.75rem);
+  line-height: 1.1;
+  font-weight: 700;
+  color: #f9fafb;
+}
+
+.resume .hero-subtitle {
+  display: block;
+  margin-top: 0.6rem;
+  font-size: 0.9rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: rgba(252, 211, 77, 0.9);
+}
+
+/* Section title + card text styling */
+.resume .section-title {
+  font-size: 1.35rem;
+  line-height: 1.2;
+  font-weight: 600;
+  margin-bottom: 1.5rem;
+}
+
+.resume .card-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #f9fafb;
+}
+
+.resume .card-description {
+  margin-top: 0.35rem;
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #d4d4d8;
+}
 
 /* LAYOUT HELPERS */
 .resume .flex-center { display: flex; justify-content: center; align-items: center; }
@@ -256,14 +292,18 @@
 
 /* Card polish */
 .cards .card {
-  min-height: 360px;                       /* consistent height */
-  transition: transform .18s ease, box-shadow .18s ease;
+  min-height: 360px;
+  transition:
+    transform 0.5s ease-out,
+    box-shadow 0.5s ease-out;
   will-change: transform;
 }
+
 .cards .card:hover {
-  transform: translateY(-2px);
-  box-shadow: 0 8px 24px rgba(0,0,0,.25);
+  transform: translateY(-4px);
+  box-shadow: 0 14px 35px rgba(0, 0, 0, 0.55);
 }
+
 .card .card-description {
   color: rgba(255,255,255,.82);
 }
