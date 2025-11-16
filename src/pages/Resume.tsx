@@ -148,6 +148,9 @@ export default function Resume() {
                 LINUX-FOCUSED IT SUPPORT · TROUBLESHOOTING · SCRIPTING
               </span>
             </h1>
+            <p className="mt-3 text-base md:text-lg text-amber-200/80 font-medium tracking-wide">
+              Current Focus: IT Support, Help Desk, and Linux-based system troubleshooting.
+            </p>
           </div>
 
           {/* Gradient overlay */}
@@ -173,6 +176,9 @@ export default function Resume() {
               from self-driven Web3 development — Solidity, React, Node.js, Hardhat, and smart
               contracts — proving I can quickly learn complex tools and apply them in real projects.
               Now I’m focused on bringing that same mindset to entry-level IT support roles.
+            </p>
+            <p className="text-neutral-400 text-sm mt-1">
+              Linux-first workflow: command-line tools, shell scripting, log analysis, network troubleshooting.
             </p>
             <p className="text-neutral-300">
               Clean code, verifiable logic, and reliable results — engineering that speaks for itself.
@@ -323,7 +329,23 @@ export default function Resume() {
           style={{ backgroundImage: `url(${base}img/Vector.png)` }}
         >
           <div className="section-inner reveal" data-delay="100">
-            <h2 className="section-title">Tech Stack</h2>
+            <h2 className="section-title">Tech Stack (IT + Development)</h2>
+
+            {/* TOOLING */}
+            <div className="tech-category">
+              <h3 className="tech-label">Tooling & DevOps</h3>
+              <div className="skill-cards">
+                <div className="skill-card flex-center" data-tooltip="Git">
+                  <img src={`${base}img/icons/git.svg`} alt="Git" />
+                </div>
+                <div className="skill-card flex-center" data-tooltip="GitHub Actions">
+                  <img src={`${base}img/icons/github-actions.svg`} alt="GitHub Actions" />
+                </div>
+                <div className="skill-card flex-center" data-tooltip="Linux">
+                  <img src={`${base}img/icons/linux.svg`} alt="Linux" />
+                </div>
+              </div>
+            </div>
 
             {/* FRONTEND */}
             <div className="tech-category">
@@ -385,23 +407,7 @@ export default function Resume() {
                   <img src={`${base}img/icons/rust.svg`} alt="Rust" />
                 </div>
               </div>
-            </div>
-
-            {/* TOOLING */}
-            <div className="tech-category">
-              <h3 className="tech-label">Tooling & DevOps</h3>
-              <div className="skill-cards">
-                <div className="skill-card flex-center" data-tooltip="Git">
-                  <img src={`${base}img/icons/git.svg`} alt="Git" />
-                </div>
-                <div className="skill-card flex-center" data-tooltip="GitHub Actions">
-                  <img src={`${base}img/icons/github-actions.svg`} alt="GitHub Actions" />
-                </div>
-                <div className="skill-card flex-center" data-tooltip="Linux">
-                  <img src={`${base}img/icons/linux.svg`} alt="Linux" />
-                </div>
-              </div>
-            </div>
+            </div>            
           </div>
         </section>
       </main>
