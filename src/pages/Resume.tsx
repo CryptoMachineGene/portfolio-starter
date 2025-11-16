@@ -335,18 +335,21 @@ export default function Resume() {
             <div className="tech-category">
               <h3 className="tech-label">Tooling & DevOps</h3>
               <div className="skill-cards">
+                <div className="skill-card flex-center" data-tooltip="Linux">
+                  <img src={`${base}img/icons/linux.svg`} alt="Linux" />
+                </div>
                 <div className="skill-card flex-center" data-tooltip="Git">
                   <img src={`${base}img/icons/git.svg`} alt="Git" />
                 </div>
                 <div className="skill-card flex-center" data-tooltip="GitHub Actions">
                   <img src={`${base}img/icons/github-actions.svg`} alt="GitHub Actions" />
                 </div>
-                <div className="skill-card flex-center" data-tooltip="Linux">
-                  <img src={`${base}img/icons/linux.svg`} alt="Linux" />
-                </div>
               </div>
+              <p className="mt-3 text-xs text-neutral-400 max-w-xl">
+                Daily tools: Linux command line (bash, SSH), basic networking (ping, traceroute, DNS), and Git-based workflows with GitHub Actions.
+              </p>
             </div>
-
+            
             {/* FRONTEND */}
             <div className="tech-category">
               <h3 className="tech-label">Frontend</h3>
