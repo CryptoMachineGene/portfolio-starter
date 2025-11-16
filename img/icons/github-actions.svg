@@ -1,0 +1,8 @@
+<svg viewBox="0 0 128 128" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="GitHub Actions">
+  <rect width="128" height="128" rx="16" fill="#1f2937"/>
+  <circle cx="64" cy="64" r="40" fill="none" stroke="#3b82f6" stroke-width="6"/>
+  <path fill="#3b82f6" d="M44 60h8v8h-8zM56 72h8v8h-8zM68 60h8v8h-8zM80 72h8v8h-8z"/>
+  <circle cx="44" cy="44" r="6" fill="#3b82f6"/>
+  <circle cx="84" cy="84" r="6" fill="#3b82f6"/>
+  <path stroke="#3b82f6" stroke-width="3" d="M44 44l20 20 20 20"/>
+</svg>
