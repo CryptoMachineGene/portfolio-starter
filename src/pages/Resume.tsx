@@ -14,7 +14,7 @@ import { usePageTitle } from "../hooks/usePageTitle";
 
 export default function Resume() {
   // Metadata / tab title
-  usePageTitle("Eugene McGrath — Web3 / Blockchain Developer Portfolio");
+  usePageTitle("Eugene McGrath — IT Support & Linux Technician");
 
   const base = import.meta.env.BASE_URL; // e.g. "/portfolio-starter/"
 
@@ -145,7 +145,7 @@ export default function Resume() {
             <h1 className="hero-title">
               Eugene McGrath
               <span className="hero-subtitle">
-                Web3 / Blockchain Developer · Smart Contracts · React
+                LINUX-FOCUSED IT SUPPORT · TROUBLESHOOTING · SCRIPTING
               </span>
             </h1>
           </div>
@@ -165,11 +165,14 @@ export default function Resume() {
           <div className="section-inner space-y-4 text-base leading-relaxed reveal">
             <h2 className="sr-only">About</h2>
             <p className="text-neutral-200 text-lg font-semibold">
-              Blockchain Developer | Smart-Contract Engineer | Web3 Builder
+              Linux-Focused IT Support · Troubleshooting · Scripting
             </p>
             <p className="text-neutral-300">
-              Focused on decentralized systems and real-world utility. I design, deploy, and test
-              full-stack dApps using Solidity, Hardhat, Foundry, and React + TypeScript.
+              I’m transitioning into IT support with a strong foundation in Linux, troubleshooting,
+              command-line workflows, and system configuration. Most of my technical growth has come
+              from self-driven Web3 development — Solidity, React, Node.js, Hardhat, and smart
+              contracts — proving I can quickly learn complex tools and apply them in real projects.
+              Now I’m focused on bringing that same mindset to entry-level IT support roles.
             </p>
             <p className="text-neutral-300">
               Clean code, verifiable logic, and reliable results — engineering that speaks for itself.
