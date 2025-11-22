@@ -152,3 +152,4 @@ Name: Eugene McGrath
 Email: emcgrath@startmail.com
 
 Location: Duncan, SC (USA)
+Update: minor improvements to IT support portfolio – 2025-11-21
