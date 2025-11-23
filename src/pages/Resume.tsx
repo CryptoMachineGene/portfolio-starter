@@ -149,7 +149,7 @@ export default function Resume() {
               </span>
             </h1>
             <p className="mt-3 text-base md:text-lg text-amber-200/80 font-medium tracking-wide">
-              Linux-focused technical support and troubleshooting, built through years of hands-on system use, hardware repair, and self-driven learning.
+              Linux-focused technical support skills developed through hands-on system use, hardware repair, and self-driven learning.
             </p>
           </div>
 
