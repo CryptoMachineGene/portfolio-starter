@@ -7,7 +7,7 @@ git worktree prune
 git branch -D gh-pages 2>/dev/null || true
 
 # --- build ---
-npm run build
+DEPLOY_TARGET=gh npm run build
 
 # --- cache-bust assets in built HTML ---
 ver=$(date +%s)
