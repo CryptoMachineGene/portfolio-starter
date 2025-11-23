@@ -145,11 +145,11 @@ export default function Resume() {
             <h1 className="hero-title">
               Eugene McGrath
               <span className="hero-subtitle">
-                LINUX-FOCUSED IT SUPPORT · TROUBLESHOOTING · SCRIPTING
+                LINUX-FOCUSED IT SUPPORT · SYSTEM TROUBLESHOOTING · CLI AUTOMATION
               </span>
             </h1>
             <p className="mt-3 text-base md:text-lg text-amber-200/80 font-medium tracking-wide">
-              Current Focus: IT Support, Help Desk, and Linux-based system troubleshooting.
+              Linux-focused technical support and troubleshooting, built through years of hands-on system use, hardware repair, and self-driven learning.
             </p>
           </div>
 
@@ -168,20 +168,19 @@ export default function Resume() {
           <div className="section-inner space-y-4 text-base leading-relaxed reveal">
             <h2 className="sr-only">About</h2>
             <p className="text-neutral-200 text-lg font-semibold">
-              Linux-Focused IT Support · Troubleshooting · Scripting
+              Linux-Focused IT Support · System Troubleshooting · Scripting
             </p>
             <p className="text-neutral-300">
-              I’m transitioning into IT support with a strong foundation in Linux, troubleshooting,
-              command-line workflows, and system configuration. Most of my technical growth has come
-              from self-driven Web3 development — Solidity, React, Node.js, Hardhat, and smart
-              contracts — proving I can quickly learn complex tools and apply them in real projects.
-              Now I’m focused on bringing that same mindset to entry-level IT support roles.
+              I’m transitioning into IT support with a strong hands-on foundation built through daily Linux use,
+              real-world troubleshooting, and personal system builds and repairs. My experience comes from solving
+              real problems on real machines — not just coursework.
             </p>
             <p className="text-neutral-400 text-sm mt-1">
-              Linux-first workflow: command-line tools, shell scripting, log analysis, network troubleshooting.
+              Practical experience: Fedora, Ubuntu, light Arch · dnf-yum / apt / pacman · Bash · grep · journalctl · cron · hardware troubleshooting
             </p>
             <p className="text-neutral-300">
-              Clean code, verifiable logic, and reliable results — engineering that speaks for itself.
+              I’m seeking an entry-level IT or Help Desk role where I can bring strong fundamentals, fast learning,
+              and a calm, disciplined problem-solving mindset.
             </p>
             <ul className="achievements">
               <li>🏆 Dapp University Blockchain Developer Mentorship</li>
